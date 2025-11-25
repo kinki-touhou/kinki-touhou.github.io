@@ -8,20 +8,20 @@
     width、height、margin、paddingといったプロパティを自由に指定できる）*/
     display: block;
     margin: 0 auto;
-
 }
 
-.welcomefont {
-    font-family: "Kokoro";
+.welcome-font {
+    font-family: "Kokoro", "Yu Mincho", serif;
+    text-align: center;
     margin-left: 1%;
 }
 
-.katsudo_hukei img {
+.katsudo-fukei img {
     margin: 0 auto;
     display: block;
 }
 
-.nenkan_yotei img {
+.nenkan-yotei img {
     display: block;
     margin: 0 auto;
 }
@@ -31,12 +31,13 @@
     /*要素を横並びや縦並びにする*/
     flex-direction: row;
     /*横並び（縦並びはcolumn）*/
+    justify-content: center; /* ★追加: 画面の真ん中に寄せる */
 }
 
-.flexbox1 li {
-    margin-left: 8.0rem;
-    /*文字幅を確保できるよ*/
-}
+    .flexbox1 li {
+        margin-left: 8.0rem;
+        /*文字幅を確保できるよ*/
+    }
 
 p {
     font-size: 80%;
@@ -62,17 +63,17 @@ p {
     /* 点々との間に余白を作る */
 }
 
-/* スライド内の画像 */
-.swiper-slide img {
-    width: 100%;
-    /* 画像の幅をスライドに合わせる */
-    height: auto;
-    /* 高さは自動調整 */
-    object-fit: cover;
-    /* 画像の比率を保ったまま領域を埋める */
-    max-height: 500px;
-    /* 画像が高くなりすぎないように制限 */
-}
+    /* スライド内の画像 */
+    .swiper-slide img {
+        width: 100%;
+        /* 画像の幅をスライドに合わせる */
+        height: auto;
+        /* 高さは自動調整 */
+        object-fit: cover;
+        /* 画像の比率を保ったまま領域を埋める */
+        max-height: 500px;
+        /* 画像が高くなりすぎないように制限 */
+    }
 
 /* 左右の矢印の色（デフォルトは青なので白に変更） */
 .swiper-button-prev,
