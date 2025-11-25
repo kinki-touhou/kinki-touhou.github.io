@@ -1,7 +1,10 @@
-<!DOCTYPE html> <!--htmlで書いてるよ〜-->
-<html lang="ja"> <!--日本語だよ-->
+<!DOCTYPE html>
+ <!--htmlで書いてるよ〜-->
+<html lang="ja">
+ <!--日本語だよ-->
 
 <head>
+    <title>東方永萃地</title>
     <meta charset="UTF-8"> <!--unicodeだよ標準規格-->
     <link rel="stylesheet" href="./style.css"> <!--css導入-->
 </head>
@@ -14,10 +17,9 @@
             <img src="./eisuichi_header.jpeg">
         </a>
     </div>
-    <div id="redid" class="red"></div> <!--挨拶-->
-    <h1>よおこそいらっしゃいませ</h1> <!--zun-->
+    <h1 class="welcome-font">よおこそ いらっしゃいませ!</h1> <!--zun-->
     <h4>東方永萃地はきっと近畿大学の東方サークルです。</h4> <!--ちがうかも()-->
-    </div>
+
 
     <hr>
     <ul class="flexbox1">
@@ -34,33 +36,89 @@
         </li>
     </ul>
     <!--適当すぎるクラス名-->
-    <div class="katsudo_fukei">
+    <div class="katsudo-fukei">
         <h2>・活動風景</h2>
         <!--Twitterから適当に引っ張ってきて新鮮さを保とう！-->
-        <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium" width=60%>  <!--画像のデカさ個々で調整可能-->
+        <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium" width=60%> <!--画像のデカさ個々で調整可能-->
         <p>美味しく頂いています。</p> <!--zun-->
-        <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">初めての方は初めまして！<br>初めてじゃない方はこれからもよろしく！<br><br>先週の紅楼夢を以て永萃地の代表になりました　うらにわ（<a href="https://twitter.com/uraniwa_return?ref_src=twsrc%5Etfw">@uraniwa_return</a>）です！<br><br>清く楽しくやっていきますので、どうぞ永萃地、私、メンバー全員共々よろしくお願いします！！！</p>&mdash; 東方永萃地 近畿大学東方サークル (@kinki_touhou) <a href="https://twitter.com/kinki_touhou/status/1978970840738791488?ref_src=twsrc%5Etfw">October 16, 2025</a></blockquote>
+        <blockquote class="twitter-tweet">
+            <p lang="ja" dir="ltr">
+                初めての方は初めまして！<br>初めてじゃない方はこれからもよろしく！<br><br>先週の紅楼夢を以て永萃地の代表になりました　うらにわ（<a href="https://twitter.com/uraniwa_return?ref_src=twsrc%5Etfw">@uraniwa_return</a>）です！<br><br>清く楽しくやっていきますので、どうぞ永萃地、私、メンバー全員共々よろしくお願いします！！！
+            </p>&mdash; 東方永萃地 近畿大学東方サークル (@kinki_touhou) <a href="https://twitter.com/kinki_touhou/status/1978970840738791488?ref_src=twsrc%5Etfw">
+                October 16,
+                2025
+            </a>
+        </blockquote>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
-    <div class="nenkan_yotei">
+
+
+    <div class="katsudo-fukei2">
+        <h2>・活動風景</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium">
+                    <p>美味しく頂いています。</p>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="https://pbs.twimg.com/media/G0FJKrKaYAA6qSF?format=jpg&name=large">
+                    <p>魚の様子</p>
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="https://pbs.twimg.com/media/GoPTBcIbYAApJOo?format=jpg&name=large">
+                    <p>れっつ、しそうろく</p>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // ループ再生
+            loop: true,
+
+            pagination: {  // ページネーション（点々）を使う場合
+                el: '.swiper-pagination',
+                clickable: true, // 点々をクリックして移動できるようにする
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',            // ナビゲーション矢印を使う場合
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+
+
+
+
+    <div class="nenkan-yotei">
         <h2>・年間予定</h2> <!--理想でもいーよ-->
         <p>夏と冬にサークル旅行</p>
         <p>春秋例大祭・紅楼夢にて同人誌を頒布</p>
         <p>サークル代表は紅楼夢翌日から交代してます</p>
     </div>
 
-    <div class="nenkan_yotei"><!--画像貼りたい、ていうか下に空白のスペースもっと欲しい-->
-        <h2>・交流</h2> 
+    <div class="nenkan-yotei">
+        <!--画像貼りたい、ていうか下に空白のスペースもっと欲しい-->
+        <h2>・交流</h2>
         <a href="https://touhougarakuta.com/news/daigaku_2025_01/">
             <p>2025年度新メンバー募集＠東方我楽多叢誌さま</p>
         </a>
     </div>
-
-
-
-
-
+    <div class="whitespace">
+    </div>
 </body>
 
 </html>
