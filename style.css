@@ -1,43 +1,45 @@
 /*クラスは.（クラス名）から始める*/
-.logo img{
-    width: 80%;/*px（ピクセル）でも画面に対する比率（％）でもオッケー*/
+.logo img {
+    width: 80%;
+    /*px（ピクセル）でも画面に対する比率（％）でもオッケー*/
     height: auto;
     /*指定した要素をブロックレベル要素として扱う。
     （親要素の幅いっぱいに広がり、他の要素と横に並ばない。改行される。
     width、height、margin、paddingといったプロパティを自由に指定できる）*/
     display: block;
     margin: 0 auto;
-
-}
-.katsudo_hukei img{
-    margin: 0 auto;
-    display: block;
-}
-.nenkan_yotei img{
-    display: block;
-    margin: 0 auto;
-}
-/*redクラスのh1にのみ適用（のはずがなぜかできてない）*/
-.red h1{
-    color: red;
-    text-align: center; /*中央揃え*/
 }
 
-/*idは#から始める*/
-#redid{
+.welcome-font {
+    font-family: "Kokoro", "Yu Mincho", serif;
     text-align: center;
+    margin-left: 1%;
+}
+
+.katsudo-fukei img {
+    margin: 0 auto;
+    display: block;
+}
+
+.nenkan-yotei img {
+    display: block;
+    margin: 0 auto;
 }
 
 .flexbox1 {
-    display: flex; /*要素を横並びや縦並びにする*/
-    flex-direction:row ; /*横並び（縦並びはcolumn）*/
+    display: flex;
+    /*要素を横並びや縦並びにする*/
+    flex-direction: row;
+    /*横並び（縦並びはcolumn）*/
+    justify-content: center; /* ★追加: 画面の真ん中に寄せる */
 }
 
-.flexbox1 li{
-    margin-left: 8.0rem; /*文字幅を確保できるよ*/
-}
+    .flexbox1 li {
+        margin-left: 8.0rem;
+        /*文字幅を確保できるよ*/
+    }
 
-p{
+p {
     font-size: 80%;
 }
 
@@ -45,34 +47,50 @@ p{
 
 /* スライドショー全体のコンテナ */
 .swiper-container {
-    width: 100%; /* 横幅を親要素(katsudo_fukei)に合わせる */
-    max-width: 700px; /* スライドショーの最大幅を指定 */
-    margin: 20px auto; /* 上下に余白、左右は自動で中央揃え */
+    width: 100%;
+    /* 横幅を親要素(katsudo_fukei)に合わせる */
+    max-width: 700px;
+    /* スライドショーの最大幅を指定 */
+    margin: 20px auto;
+    /* 上下に余白、左右は自動で中央揃え */
 }
 
 /* 各スライドの設定 */
 .swiper-slide {
-    text-align: center; /* 中のテキスト(pタグ)を中央揃え */
-    padding-bottom: 30px; /* 点々との間に余白を作る */
+    text-align: center;
+    /* 中のテキスト(pタグ)を中央揃え */
+    padding-bottom: 30px;
+    /* 点々との間に余白を作る */
 }
 
     /* スライド内の画像 */
     .swiper-slide img {
-        width: 100%; /* 画像の幅をスライドに合わせる */
-        height: auto; /* 高さは自動調整 */
-        object-fit: cover; /* 画像の比率を保ったまま領域を埋める */
-        max-height: 500px; /* 画像が高くなりすぎないように制限 */
+        width: 100%;
+        /* 画像の幅をスライドに合わせる */
+        height: auto;
+        /* 高さは自動調整 */
+        object-fit: cover;
+        /* 画像の比率を保ったまま領域を埋める */
+        max-height: 500px;
+        /* 画像が高くなりすぎないように制限 */
     }
 
 /* 左右の矢印の色（デフォルトは青なので白に変更） */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #ffffff; /* 矢印の色を白に */
+    color: #ffffff;
+    /* 矢印の色を白に */
 }
 
 /* ページネーションの点々（デフォルトは青なので白に変更） */
 .swiper-pagination-bullet-active {
-    background: #ffffff; /* アクティブな点の色を白に */
+    background: #ffffff;
+    /* アクティブな点の色を白に */
 }
 
 /*ここまでスライドショー関連*/
+
+.whitespace {
+    height: 30px;
+    width: auto;
+}
