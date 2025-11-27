@@ -7,6 +7,8 @@
     <title>東方永萃地</title>
     <meta charset="UTF-8"> <!--unicodeだよ標準規格-->
     <link rel="stylesheet" href="./style.css"> <!--css導入-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -54,25 +56,56 @@
 
 
 
-    <div class="katsudo-fukei2">
+    <div class="slider-section">
         <h2>・活動風景</h2>
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                    <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium">
-                    <p>美味しく頂いています。</p>
-                </div>
+                     <div class="card-container">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium">
+                            </div>
 
-                <div class="swiper-slide">
-                    <img src="https://pbs.twimg.com/media/G0FJKrKaYAA6qSF?format=jpg&name=large">
-                    <p>魚の様子</p>
-                </div>
+                            <div class="card-text">
+                            <h3>This is EISUICHI fashion</h3>
+                            <p>2025年 きのこの山</p> </div>
 
+                            <div class="badge">New!</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="swiper-slide">
-                    <img src="https://pbs.twimg.com/media/GoPTBcIbYAApJOo?format=jpg&name=large">
-                    <p>れっつ、しそうろく</p>
+                     <div class="card-container">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://pbs.twimg.com/media/G0FJKrKaYAA6qSF?format=jpg&name=large">
+                            </div>
+
+                            <div class="card-text">
+                            <h3>This is EISUICHI food</h3>
+                            <p>このあとスタッフが美味しく頂きました</p> </div>
+
+                            <div class="badge">New!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                     <div class="card-container">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://pbs.twimg.com/media/GoPTBcIbYAApJOo?format=jpg&name=large">
+                            </div>
+
+                            <div class="card-text">
+                            <h3>This is EISUICHI Card Game</h3>
+                            <p>れっつ、しそうろく</p> </div>
+
+                            <div class="badge">New!</div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -87,13 +120,16 @@
         var swiper = new Swiper('.swiper-container', {
             // ループ再生
             loop: true,
-
-            pagination: {  // ページネーション（点々）を使う場合
+            slidesPerView: 1,     // 「1枚だけ」表示する
+            spaceBetween: 30,     // 見えてないけど、隣のスライドとの隙間を少し空けておく
+            // ページネーション（点々）
+            pagination: { 
                 el: '.swiper-pagination',
-                clickable: true, // 点々をクリックして移動できるようにする
+                clickable: true,
             },
+            // 矢印ボタン
             navigation: {
-                nextEl: '.swiper-button-next',            // ナビゲーション矢印を使う場合
+                nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
         });
