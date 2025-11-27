@@ -20,6 +20,7 @@
     display: block;
 }
 
+
 .nenkan-yotei img {
     display: block;
     margin: 0 auto;
@@ -44,11 +45,34 @@ p {
 
 /* 以下、画像スライドショー用 */
 
+/* 新しいスライドショーエリアの設定 */
+.slider-section {
+    /* 上下の余白をあける */
+    margin: 40px auto;/* 中の文字（見出しなど）を中央揃えにする */
+    text-align: center;/* 幅が広がりすぎないように制限する（お好みで） */
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* 見出し（h2）のデザインをここでも有効にする */
+.slider-section h2 {
+    display: inline-block;
+    border-bottom: 2px solid #d32f2f; /* 赤い線 */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+/* スライドショーの「フィルム」部分の設定 */
+.swiper-wrapper {
+    display: flex;             /* 画像を横並びにする */
+    width: 100%;               /* 幅を確保する */
+    height: 100%;              /* 高さを確保する */
+}
+
 /* スライドショー全体のコンテナ */
 .swiper-container {
+    position: relative;
     width: 100%;
-    /* 横幅を親要素(katsudo_fukei)に合わせる */
-    max-width: 700px;
+    max-width:300px;
     /* スライドショーの最大幅を指定 */
     margin: 20px auto;
     /* 上下に余白、左右は自動で中央揃え */
@@ -56,35 +80,45 @@ p {
 
 /* 各スライドの設定 */
 .swiper-slide {
-    text-align: center;
-    /* 中のテキスト(pタグ)を中央揃え */
-    padding-bottom: 30px;
-    /* 点々との間に余白を作る */
+    padding-bottom: 30px;/* 点々との間に余白を作る */
+    flex-shrink: 0;          /* 勝手に縮まないようにする */
+    width: auto;
+    box-sizing: border-box;  /* 枠線などを含めたサイズ計算にする */
 }
 
     /* スライド内の画像 */
     .swiper-slide img {
-        width: 100%;
-        /* 画像の幅をスライドに合わせる */
-        height: auto;
-        /* 高さは自動調整 */
-        object-fit: cover;
-        /* 画像の比率を保ったまま領域を埋める */
-        max-height: 500px;
-        /* 画像が高くなりすぎないように制限 */
+        width: 100%;/* 画像の幅をスライドに合わせる */
+        height: auto;/* 高さは自動調整 */
+        object-fit: cover;/* 画像の比率を保ったまま領域を埋める */
+        max-height: 500px;/* 画像が高くなりすぎないように制限 */
     }
 
-/* 左右の矢印の色（デフォルトは青なので白に変更） */
+/* 左右の矢印の色（デフォルトは青なので赤に変更） */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #ffffff;
-    /* 矢印の色を白に */
+    color:red;
 }
 
-/* ページネーションの点々（デフォルトは青なので白に変更） */
+/* --- スライドショーの点（ページネーション）の設定 --- */
+
+/* 1. 位置を変える */
+.swiper-pagination {
+    bottom: -5px !important;  /* 例：画像の外側（下）に配置 */
+}
+
+/* 2. 点そのものの大きさ・形を変える */
+.swiper-pagination-bullet {
+    width: 16px;  /* 幅（デフォルトは8pxくらい） */
+    height: 16px; /* 高さ */
+    margin: 0 8px !important; 
+    background: #ccc; /* 選択されていない点の色（グレーなど） */
+    opacity: 1; /* 透明にしない */
+}
+/* 3. 選ばれている（アクティブな）点の設定 */
 .swiper-pagination-bullet-active {
-    background: #ffffff;
-    /* アクティブな点の色を白に */
+    background: #d32f2f; /* 選ばれている点の色（赤） */
+    transform: scale(1.3);  
 }
 
 /*ここまでスライドショー関連*/
@@ -93,3 +127,49 @@ p {
     height: 30px;
     width: auto;
 }
+/*ここから各画像の動作設定*/
+/*クラスの名前は適当だから自由に変えてね*/
+.card {
+    position: relative; /* 子要素(badge)の基準点 */
+    width: 100%; /* 親要素（スライド）の幅に合わせる */
+    max-width: 300px; /* ただし300px以上にはならないようにする */
+    background: white;
+    border-radius: 15px; /*  数値を変えると角の丸みが変わる */
+    overflow: hidden;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-text {
+    padding: 20px;
+}
+
+/* 右上の「New!」バッジ */
+.badge {
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+    /* グラデーション背景 */
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+/* マウスが乗った時 (:hover) */
+.card:hover {
+    /* 上に10px浮く & 1.05倍に拡大 */
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+}
+
+
+/*ここまで各画像の動作設定*/
