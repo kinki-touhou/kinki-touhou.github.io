@@ -10,8 +10,6 @@
     margin: 0 auto;
 }
 
-
-
 .welcome-font {
     font-family: "Kokoro", "Yu Mincho", serif;
     text-align: center;
@@ -42,6 +40,7 @@
 }
 
     .flexbox1 li {
+        font-family: 'Shippori Mincho', serif;
         margin-left: 8.0rem;
         /*文字幅を確保できるよ*/
     }
