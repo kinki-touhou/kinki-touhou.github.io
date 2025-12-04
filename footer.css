@@ -1,0 +1,46 @@
+/* =========================================
+   フッター（ページ下部）の設定
+   ========================================= */
+
+footer {
+    background-color: #222;
+    color: #ffffff;         /* 文字色は白 */
+    padding: 40px 0;        /* 上下の余白 */
+    margin-top: 50px;       /* 上のコンテンツとの距離 */
+    text-align: center;     /* 文字を真ん中に */
+}
+
+/* フッター内のリンク集 */
+.footer-links {
+    display: flex;          /* 横並びにする */
+    justify-content: center;/* 中央寄せ */
+    list-style: none;       /* 点々を消す */
+    padding: 0;
+    margin-bottom: 20px;    /* コピーライトとの隙間 */
+    flex-wrap: wrap;        /* スマホで入り切らない時は折り返す */
+}
+
+/* フッター内の各リンク */
+.footer-links li {
+    margin: 0 15px;         /* リンク同士の間隔 */
+}
+
+/* フッター内のリンク文字（ここだけ色を変える！） */
+.footer-links a {
+    color: #cccccc;         /* 少しグレーがかった白 */
+    text-decoration: none;  /* 下線を消す */
+    font-weight: bold;
+    transition: color 0.3s; /* 色変化のアニメーション */
+}
+
+/* マウスを乗せた時 */
+.footer-links a:hover {
+    color: #ffffff;         /* 真っ白に光らせる */
+    text-decoration: underline; /* 下線を出す */
+}
+
+/* コピーライトの文字サイズ */
+.copyright {
+    font-size: 12px;
+    opacity: 0.7; /* 少し薄くする */
+}
