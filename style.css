@@ -56,6 +56,10 @@
     margin: 0 auto; 
 }
 
+.kouryuu p{
+    font-size:16px ;
+}
+
 /* --- 見出し（h2）のデザイン共通化 --- */
 .katsudo-fukei h2, .nenkan-yotei h2 ,.kouryuu h2{
     display: inline-block;

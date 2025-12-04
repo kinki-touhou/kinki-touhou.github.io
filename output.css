@@ -2,6 +2,14 @@
    Outputページ用（ギャラリー配置）
    ========================================= */
 
+.output{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .gallery-container {
     display: flex;       /* 横並びにする */
     flex-wrap: wrap;     /* 端まで来たら折り返す */
