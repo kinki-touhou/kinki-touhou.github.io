@@ -133,6 +133,15 @@
             loop: true,
             slidesPerView: 1,     // 「1枚だけ」表示する
             spaceBetween: 30,     // 見えてないけど、隣のスライドとの隙間を少し空けておく
+            centeredSlides: true, // アクティブなスライドを中央にする
+            spaceBetween: 30,     // スライド間の隙間
+            speed: 600,           // 切り替わるスピード（ミリ秒）。
+
+             autoplay: {
+                delay: 3000,      // 3秒ごとに切り替え
+                disableOnInteraction: false, // ユーザーが触っても自動再生を止めない
+            },
+
             // ページネーション（点々）
             pagination: { 
                 el: '.swiper-pagination',
@@ -152,12 +161,39 @@
 
     <div class="nenkan-yotei">
         <h2>・年間予定</h2> <!--理想でもいーよ-->
-        <p>夏と冬にサークル旅行</p>
-        <p>春秋例大祭・紅楼夢にて同人誌を頒布</p>
-        <p>サークル代表は紅楼夢翌日から交代してます</p>
+        <div class="nenkan-yotei-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="./2025_eisuichi/2025_eisuichi_8.jpg" width="40%">
+                </div>
+                <div class="card-text">
+                    <h3>新入生歓迎 桜を見る会</h3>
+                    <p>毎年 春</p> </div>
+            </div>
+              
+            <div class="card">
+                <div class="card-image">
+                </div>
+
+                <div class="card-text">
+                    <h3>夏と冬にサークル旅行</h3>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="./2025_eisuichi/2025_eisuichi_10.jpg" width="40%">
+                </div>
+
+                <div class="card-text">
+                    <h3>春秋例大祭・紅楼夢にて同人誌を頒布</h3>
+                    <p>サークル代表は紅楼夢翌日から交代してます</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="nenkan-yotei">
+    <div class="kouryuu">
         <!--画像貼りたい、ていうか下に空白のスペースもっと欲しい-->
         <h2>・交流</h2>
         <a href="https://touhougarakuta.com/news/daigaku_2025_01/">
