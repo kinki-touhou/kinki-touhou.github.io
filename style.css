@@ -28,12 +28,17 @@
     margin: 0 auto;
 }
 
+.twitter-tweet {
+    margin: 0 auto;
+    display: block;
+}
+
 .flexbox1 {
     display: flex;
     /*要素を横並びや縦並びにする*/
     flex-direction: row;
     /*横並び（縦並びはcolumn）*/
-    justify-content: center; /* ★追加: 画面の真ん中に寄せる */
+    margin-left: 25.0rem;
 }
 
     .flexbox1 li {
