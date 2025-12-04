@@ -15,21 +15,53 @@
     text-align: center;
 }
 
+.twitter-tweet {
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* --- セクション（活動風景・年間予定）の共通設定 --- */
+.nenkan-yotei .nenkan-yotei-container{
+    display: flex;       /* 横並びにする魔法 */
+    flex-wrap: wrap;     /* 画面幅が足りなくなったら折り返す（改行） */
+    gap: 3px;           /* カード同士の隙間 */
+    padding: 20px;       /* 外側の余白 */
+    max-width: 1000px;   /* 広がりすぎ防止 */
+    margin: 0 auto;      /* 画面中央に配置 */
+}
+
+.nenkan-yotei .nenkan-yotei-container .card {
+    width: auto;
+    height : auto;
+}
+
 .katsudo-fukei img {
     margin: 0 auto;
     display: block;
 }
 
-
 .nenkan-yotei img {
-    display: block;
     margin: 0 auto;
+    height: 300px;
+    width: auto;
 }
 
-.twitter-tweet {
-    margin: 0 auto;
-    display: block;
+.katsudo-fukei p{
+    margin: 20px auto;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
 }
+
+/* --- 見出し（h2）のデザイン共通化 --- */
+.katsudo-fukei h2, .nenkan-yotei h2 {
+    display: inline-block;
+    border-bottom: 2px solid #d32f2f; /* 赤い線 */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+/* ここまでセクション共通設定 */
 
 .flexbox1 {
     display: flex;
