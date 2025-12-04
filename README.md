@@ -13,6 +13,8 @@
 root/
    ├ Beisuichi_header.jpeg
    ├ index.html
+      ├ about.html
+      └output.html
    ├ README.md
    └ style.css
 ```

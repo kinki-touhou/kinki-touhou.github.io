@@ -10,6 +10,8 @@
     margin: 0 auto;
 }
 
+
+
 .welcome-font {
     font-family: "Kokoro", "Yu Mincho", serif;
     text-align: center;
@@ -26,12 +28,17 @@
     margin: 0 auto;
 }
 
+.twitter-tweet {
+    margin: 0 auto;
+    display: block;
+}
+
 .flexbox1 {
     display: flex;
     /*要素を横並びや縦並びにする*/
     flex-direction: row;
     /*横並び（縦並びはcolumn）*/
-    justify-content: center; /* ★追加: 画面の真ん中に寄せる */
+    margin-left: 25.0rem;
 }
 
     .flexbox1 li {
@@ -173,3 +180,42 @@ p {
 
 
 /*ここまで各画像の動作設定*/
+
+/* =========================================
+   スマホ対応（レスポンシブ設定）
+   ========================================= */
+
+/* 「もし画面の幅が600px以下なら」という条件 */
+@media screen and (max-width: 600px) {
+
+    /* 1. メニューバーを縦並びにする */
+    .flexbox1 {
+        flex-direction: column; /* 横(row)から縦(column)へ変更 */
+        gap: 15px; /* 項目同士の間隔 */
+    }
+
+    /* 2. メニュー項目の余白調整 */
+    .flexbox1 li {
+        margin: 0; /* PC用の横の隙間をリセット */
+        border-bottom: 1px solid #ccc; /* 項目間に線を追加 */
+        padding-bottom: 10px; /* 線との隙間 */
+        width: 100%; /* 横幅いっぱいに */
+    }
+
+    /* 3. タイトル文字を少し小さくする */
+    .welcome-font {
+        font-size: 20px; /* PCだと大きすぎるので小さく */
+    }
+
+    /* 4. スライドショーの矢印を消す */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; 
+    }
+
+    /* 5. 全体の余白を調整 */
+    .slider-section, .nenkan-yotei, .katsudo-fukei {
+        width: 90%; /* 画面ギリギリにならないように */
+        padding: 10px; /* 内側の余白を少し減らす */
+    }
+}

@@ -1,0 +1,28 @@
+/* =========================================
+   Outputページ用（ギャラリー配置）
+   ========================================= */
+
+.gallery-container {
+    display: flex;       /* 横並びにする */
+    flex-wrap: wrap;     /* 端まで来たら折り返す */
+    justify-content: center; /* 真ん中に寄せる */
+    gap: 30px;           /* カード同士の隙間 */
+    padding: 20px;       /* 全体の余白 */
+    max-width: 1000px;   /* 広がりすぎないように */
+    margin: 0 auto;      /* 画面中央に配置 */
+}
+
+/* outputページではカードの幅を固定しないと崩れることがあるので念押し */
+.gallery-container .card {
+    width: 300px; /* カードの幅を固定 */
+    /* max-widthは解除しておくと綺麗に並びます */
+    max-width: none; 
+}
+
+/* スマホの時はカードを少し小さく、あるいは1列にする */
+@media screen and (max-width: 600px) {
+    .gallery-container .card {
+        width: 100%; /* スマホなら画面幅いっぱい */
+        max-width: 350px;
+    }
+}
