@@ -51,7 +51,7 @@
     <div class="katsudo-fukei">
         <h2>・活動風景</h2>
         <!--Twitterから適当に引っ張ってきて新鮮さを保とう！-->
-        <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium" width=60%> <!--画像のデカさ個々で調整可能-->
+        <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium" width=40%> <!--画像のデカさ個々で調整可能-->
         <p>美味しく頂いています。</p> <!--zun-->
         <blockquote class="twitter-tweet">
             <p lang="ja" dir="ltr">
@@ -253,6 +253,18 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        // ブラウザの「セッションストレージ（一時的な記憶）」をチェック
+        if (!sessionStorage.getItem('visited')) {
+            // 1. bodyに「first-visit」クラスをつけて、アニメーションを発動させる
+            document.body.classList.add('first-visit');
+            // 2. 「もう来ました」というハンコ（visited）を押しておく
+            sessionStorage.setItem('visited', 'true');
+        }
+    </script>
+    </body>
+</html>
 </body>
 
 </html>

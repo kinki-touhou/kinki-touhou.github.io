@@ -71,18 +71,36 @@
 
 .flexbox1 {
     display: flex;
-    /*要素を横並びや縦並びにする*/
     flex-direction: row;
-    /*横並び（縦並びはcolumn）*/
-    margin-left: 25.0rem;
+    justify-content: center; 
+    background-color: #222;
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0;
+    list-style: none; 
+    padding-left: 0; /* 左の余計な隙間をリセット */
 }
 
-    .flexbox1 li {
-        font-family: 'Shippori Mincho', serif;
-        margin-left: 8.0rem;
-        /*文字幅を確保できるよ*/
-    }
+.flexbox1 li {
+    font-family: 'Shippori Mincho', serif;
+    margin: 0 50px; /* ★「左右に30pxずつ」の隙間を作る */
+}
 
+.flexbox1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+    display: block; /* クリック範囲を安定させる */
+}
+
+.flexbox1 a:hover {
+    background-color: #ab5151;
+    color: white;
+}
 p {
     font-size: 80%;
 }
@@ -205,10 +223,11 @@ p {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 /* マウスが乗った時 (:hover) */
+/* カードにマウスを乗せた時の動き */
 .card:hover {
-    /* 上に10px浮く & 1.05倍に拡大 */
-    transform: translateY(-10px) scale(1.05); 
-    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(211, 47, 47, 0.4); 
+    filter: brightness(1.1);
 }
 
 
@@ -251,4 +270,22 @@ p {
         width: 90%; /* 画面ギリギリにならないように */
         padding: 10px; /* 内側の余白を少し減らす */
     }
+}
+
+/* =========================================
+   ページ全体のフェードインアニメーション
+   ========================================= */ 
+@keyframes fadeInAnime {
+    0% {
+        opacity: 0;             /* 最初は透明 */
+        transform: translateY(20px); /* 少し下にいる */
+    }
+    100% {
+        opacity: 1;             /* 最後はくっきり */
+        transform: translateY(0);    /* 元の位置に戻る */
+    }
+}
+
+.first-visit {
+    animation: fadeInAnime 1.5s ease-out; /* 少しゆっくりにして優雅に */
 }
