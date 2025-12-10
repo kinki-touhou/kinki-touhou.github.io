@@ -242,14 +242,13 @@ p {
 
     /* 1. メニューバーを縦並びにする */
     .flexbox1 {
-        flex-direction: column; /* 横(row)から縦(column)へ変更 */
         gap: 15px; /* 項目同士の間隔 */
+        height :25px;
     }
 
     /* 2. メニュー項目の余白調整 */
     .flexbox1 li {
         margin: 0; /* PC用の横の隙間をリセット */
-        border-bottom: 1px solid #ccc; /* 項目間に線を追加 */
         padding-bottom: 10px; /* 線との隙間 */
         width: 100%; /* 横幅いっぱいに */
     }
@@ -270,6 +269,10 @@ p {
         width: 90%; /* 画面ギリギリにならないように */
         padding: 10px; /* 内側の余白を少し減らす */
     }
+
+    .card{
+        size :auto; 
+        }
 }
 
 /* =========================================
