@@ -1,0 +1,93 @@
+
+/* =========================================
+   ローディング画面（陰陽玉）
+   ========================================= */
+
+/* 1. 全体を覆う白い幕 */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fdfdfd; /* 背景色（和紙っぽい白） */
+    z-index: 9999; /* 最前面に表示 */
+    
+    /* ど真ん中に配置する設定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 消える時のアニメーション */
+}
+
+
+/* 2. 陰陽玉を描く（修正版） */
+.yin-yang {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #333;
+    position: relative; /* 子要素の基準点 */
+
+    /* ★変更点1：グラデーションを「横向き（左赤・右白）」にする */
+    /* これで縦にS字を描く準備ができます */
+    background: linear-gradient(to right, #d32f2f 50%, #ffffff 50%);
+
+    /* クルクル回すアニメーション */
+    animation: spin 1.5s linear infinite;
+}
+
+/* 共通設定：上下の丸を作る */
+.yin-yang::before,
+.yin-yang::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 左右ど真ん中に配置 */
+    
+    /* ★変更点2：サイズの計算（これが超重要！） */
+    /* 全体80pxの半分＝40pxの丸を作ります */
+    width: 12px;   /* 中の「点」の大きさ */
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* 上の丸（赤の頭） */
+.yin-yang::before {
+    top: 0;
+    
+    /* ★変更点3：色を反転させてカーブを作る */
+    /* 「赤い太線」で白地を侵食し、「白い背景」で点を作る */
+    border: 14px solid #d32f2f; /* 赤い体 */
+    background-color: #ffffff;  /* 白い点 */
+}
+
+/* 下の丸（白の頭） */
+.yin-yang::after {
+    bottom: 0;
+    
+    /* 「白い太線」で赤地を侵食し、「赤い背景」で点を作る */
+    border: 14px solid #ffffff; /* 白い体 */
+    background-color: #d32f2f;  /* 赤い点 */
+}
+/* 文字のデザイン */
+#loading p {
+    margin-top: 20px;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+/* 3. 回転アニメーションの定義 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 4. 読み込み完了後に消すためのクラス */
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+}

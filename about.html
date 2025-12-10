@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./style.css"> <!--css導入-->
     <link rel="stylesheet" href="./about.css"> <!--css導入-->
     <link rel="stylesheet" href="./footer.css"> <!--css導入-->
+    <link rel="stylesheet" href="./cherry_blossom.css"> <!--css導入-->
+    <link rel="stylesheet" href="./loading.css"> <!--css導入-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="icon" href="./favicon.ico?v=2">
@@ -17,6 +19,12 @@
 </head>
 
 <body>
+    <div id="loading">
+        <div class="yin-yang"></div>
+        <p>少女祈祷中...</p>
+    </div>
+
+    
      <div class="logo">
         <!--えーすいちロゴ-->
         <a href="https://x.com/kinki_touhou?s=21&t=CS9Oyks_KCsEeIwwuKftSg">
@@ -60,6 +68,51 @@
         <img src="./2025_eisuichi/2025_eisuichi_5.jpg" width="40%">
         <p></p>
     </div>
+
+     <script>
+        // 花びらを生成する関数
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // ランダムな位置（左端から右端のどこか）
+            petal.style.left = Math.random() * 100 + 'vw';
+            
+            // ランダムなアニメーション時間（落ちるスピードにバラつきを出す）
+            // 5秒 〜 10秒の間
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+            
+            // ランダムな大きさ（大小をつける）
+            const size = Math.random() * 10 + 10; // 10px 〜 20px
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+
+            // bodyに追加
+            document.body.appendChild(petal);
+
+            // アニメーションが終わったら（10秒後）要素を消す（メモリ節約）
+            setTimeout(() => {
+                petal.remove();
+            }, 10000);
+        }
+
+        // 300ミリ秒（0.3秒）ごとに花びらを1枚生成する
+        setInterval(createPetal, 300);
+    </script>
+
+
+    <script>
+        window.addEventListener('load', function() {
+            // 画面の読み込みが完全に終わったら実行
+            const loadingScreen = document.getElementById('loading');
+            
+            // 少しだけ待ってから消すと余韻があって良い（0.8秒待機）
+            setTimeout(function() {
+                loadingScreen.classList.add('loaded');
+            }, 800);
+        });
+    </script>
+
 
     <footer>
         <div class="footer-container">
