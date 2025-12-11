@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="./footer.css"> <!--css導入-->
     <link rel="stylesheet" href="./cherry_blossom.css"> <!--css導入-->
     <link rel="stylesheet" href="./loading.css"> <!--css導入-->
-    <link rel="stylesheet" href="./font.css"> <!--css導入-->    
+    <link rel="stylesheet" href="./font.css"> <!--css導入--> 
+    <link rel="stylesheet" href="./countdown.css"> <!--css導入-->    
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="icon" href="./favicon.ico?v=2">
@@ -77,6 +78,14 @@
 
     </div>
 
+    <div class="countdown-container">
+    <h3>次の「東方紅楼夢」まで</h3>
+    <div id="timer">
+        <span id="days">00</span>日
+        <span id="hours">00</span>時間
+    </div>
+    <p>（2026年10月11日 開催予定）</p>
+    </div>
 
 
     <div class="slider-section">
@@ -316,6 +325,27 @@
             // 2. 「もう来ました」というハンコ（visited）を押しておく
             sessionStorage.setItem('visited', 'true');
         }
+            const eventDate = new Date("October 11, 2026 10:00:00").getTime();
+            const now = new Date().getTime();
+            const gap = eventDate - now;
+
+            // 計算（ミリ秒を日・時に直す）
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+
+            // 画面に表示
+            if (gap > 0) {
+                document.getElementById("days").innerText = textDay;
+                document.getElementById("hours").innerText = textHour;
+            } else {
+                document.getElementById("timer").innerText = "開催当日！";
+            }
+        countdown();
     </script>
     </body>
 </html>
