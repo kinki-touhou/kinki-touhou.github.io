@@ -1,5 +1,6 @@
 /*クラスは.（クラス名）から始める*/
 body {
+    
     /*背景画像の設定*/
     background-image: 
         linear-gradient(to bottom, white 600px, transparent 750px),
