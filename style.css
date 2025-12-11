@@ -70,11 +70,23 @@ body {
 }
 
 /* --- 見出し（h2）のデザイン共通化 --- */
-.katsudo-fukei h2, .nenkan-yotei h2 ,.kouryuu h2{
-    display: inline-block;
-    border-bottom: 2px solid #d32f2f; /* 赤い線 */
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+.katsudo-fukei h2, 
+.nenkan-yotei h2, 
+.kouryuu h2, 
+.slider-section h2, 
+.about h2, 
+.output h2 {
+    /* 以前の下線をリセット */
+    border-bottom: none;
+    display: block; /* インラインからブロックに変えて幅を持たせる */
+    /* 左側に太い赤線（御札の背） */
+    border-left: 10px solid #d32f2f;
+    /* 背景をうっすら赤くする */
+    background: linear-gradient(to right, #fff0f0, transparent);
+    padding: 10px 15px; /* 文字の周りに余白 */
+    margin-bottom: 30px;
+    text-align: left; /* 左寄せにする */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);/* 影をつけて少し浮かせる */
 }
 /* ここまでセクション共通設定 */
 
