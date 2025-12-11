@@ -1,4 +1,12 @@
 /*クラスは.（クラス名）から始める*/
+body {
+    /*背景画像の設定*/
+    background-image: 
+        linear-gradient(to bottom, white 600px, transparent 750px),
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url('./japanese-paper.jpg');
+    background-repeat: repeat;
+}
 .logo img {
     width: 80%;
     /*px（ピクセル）でも画面に対する比率（％）でもオッケー*/
