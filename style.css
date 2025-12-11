@@ -110,6 +110,13 @@ body {
     background-color: #ab5151;
     color: white;
 }
+
+.flexbox1 a.current {
+    background-color: #d32f2f; /* 赤い背景 */
+    color: white;              /* 白文字 */
+    pointer-events: none;      /* クリックできないようにする（今いるページなので） */
+    order: 1px solid #fff;
+}
 p {
     font-size: 80%;
 }
