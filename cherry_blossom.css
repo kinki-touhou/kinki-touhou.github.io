@@ -17,6 +17,8 @@
     
     /* アニメーションの設定 */
     animation: fall linear infinite;
+
+    will-change: transform, opacity;
 }
 
 /* 落ちる動き（上から下へ、ゆらゆらと） */
