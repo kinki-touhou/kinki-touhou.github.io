@@ -51,28 +51,52 @@
         <li>
             <a href="output.html" class="current">Output</a>
         </li>
+
+        <li>
+            <a href="https://x.com/kinki_touhou?s=21&t=CS9Oyks_KCsEeIwwuKftSg" >Twitter(X)</a>
+        </li>
     </ul>
 
-    <div class="output"> <h2>・Output (作品紹介)</h2>
-    <p>これまでに制作した同人誌やイラストです</p>
+<div class="output">
+    <h2>・Output (作品ギャラリー)</h2>
+    <p>制作した作品たちです。カテゴリボタンで絞り込めます。</p>
+</div>
+
+<div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">全て</button>
+    <button class="filter-btn" data-filter="book">会誌</button>
+    <button class="filter-btn" data-filter="illust">絵・イラスト</button>
+    <button class="filter-btn" data-filter="music">音楽・動画</button>
+    <button class="filter-btn" data-filter="novel">小説・SS</button>
 </div>
 
 <div class="gallery-container">
 
-    <div class="card">
+    <div class="card gallery-item" data-category="book">
         <div class="card-image">
-            <img src="./2025_eisuichi/2025_eisuichi_7.webp" width="40%">
+            <img src="./2025_eisuichi/2025_eisuichi_4.webp" loading="lazy">
         </div>
         <div class="card-text">
-            <h3>東方永萃地 2023</h3>
-            <p>2023年 発行</p>
+            <h3>東方永萃地 2025秋</h3>
+            <p>2025年 紅楼夢発行</p>
+        </div>
+        <div class="badge">New!</div>
+    </div>
+
+    <div class="card gallery-item" data-category="book">
+        <div class="card-image">
+            <img src="./2025_eisuichi/2025_eisuichi_9.webp" loading="lazy">
+        </div>
+        <div class="card-text">
+            <h3>東方永萃地 2025春</h3>
+            <p>2025年 春例発行</p>
         </div>
         <div class="badge">Book</div>
     </div>
 
-    <div class="card">
+    <div class="card gallery-item" data-category="book">
         <div class="card-image">
-            <img src="./2025_eisuichi/2025_eisuichi_6.webp" width="40%">
+            <img src="./2025_eisuichi/2025_eisuichi_6.webp" loading="lazy">
         </div>
         <div class="card-text">
             <h3>東方永萃地 2024</h3>
@@ -81,47 +105,49 @@
         <div class="badge">Book</div>
     </div>
 
-    <div class="card">
+    <div class="card gallery-item" data-category="book">
         <div class="card-image">
-            <img src="./2025_eisuichi/2025_eisuichi_9.webp" width="40%">
+            <img src="./2025_eisuichi/2025_eisuichi_7.webp" loading="lazy">
         </div>
         <div class="card-text">
-            <h3>東方永萃地 2025春</h3>
-            <p>2025年 春例発行</p>
+            <h3>東方永萃地 2023</h3>
+            <p>2023年 発行</p>
         </div>
-        <div class="badge">Book</div>
-    </div>
-    
-    <div class="card">
-        <div class="card-image">
-            <img src="./2025_eisuichi/2025_eisuichi_4.webp" width="40%">
-        </div>
-        <div class="card-text">
-            <h3>東方永萃地 2025秋</h3>
-            <p>2025年 紅楼夢発行</p>
-        </div>
-        <div class="badge">Book</div>
+        <div class="badge">Book</div>   
     </div>
 
-    <div class="card">
+    <div class="card gallery-item" data-category="illust">
         <div class="card-image">
-            <img src="./2025_eisuichi/2025_eisuichi_2.webp" width="40%">
+            <img src="./2025_eisuichi/2025_eisuichi_2.webp" loading="lazy">
         </div>
         <div class="card-text">
-            <h3>魂魄妖夢</h3>
+            <h3>魂魄妖夢イラスト</h3>
             <p>カワイイ</p>
         </div>
-        <div class="badge">art</div>
+        <div class="badge" style="background: linear-gradient(45deg, #e238ee, #d379e0);">Art</div>
     </div>
 
-    
-    
-    <div class="card">
-        <div class="card-text">
-            <h3>次回作 制作中</h3>
-            <p>お楽しみに！</p>
+    <div class="card gallery-item" data-category="music">
+        <div class="card-image">
+            <img src="./2025_eisuichi/cd_jacket.jpg" loading="lazy">
         </div>
+        <div class="card-text">
+            <h3>東方アレンジ曲「幻想の音」</h3>
+            <p>SoundCloudで公開中</p>
+            <audio controls src="./music/sample.mp3" style="width: 100%; margin-top:10px;"></audio>
+        </div>
+        <div class="badge" style="background: linear-gradient(45deg, #4facfe, #00f2fe);">Music</div>
     </div>
+
+    <div class="card gallery-item" data-category="novel">
+        <div class="card-text">
+            <h3>【SS】博麗神社の午後</h3>
+            <p class="novel-preview">「霊夢、お茶はないのかしら？」紫は隙間から顔を出して...</p>
+            <a href="#" class="read-more">読む（PDF/Pixiv）</a>
+        </div>
+        <div class="badge" style="background: linear-gradient(45deg, #43e97b, #38f9d7);">Novel</div>
+    </div>
+
 </div>
 
      <script>
@@ -168,7 +194,38 @@
         });
     </script>
 
+    <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. ボタンの見た目を切り替え
+            // まず全員から 'active' を外す
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // 押されたボタンにだけ 'active' をつける
+            button.classList.add('active');
+
+            // 2. 押されたボタンの種類（all, illust, music...）を取得
+            const filterValue = button.getAttribute('data-filter');
+
+            // 3. すべての作品をチェック
+            galleryItems.forEach(item => {
+                // アニメーションをリセットするために一旦クラスを外す
+                item.classList.remove('show');
+                item.classList.remove('hide');
+
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    // 「すべて」か「カテゴリ一致」なら表示
+                    item.classList.add('show');
+                } else {
+                    // それ以外は隠す
+                    item.classList.add('hide');
+                }
+            });
+        });
+    });
+    </script>
 
     <footer>
         <div class="footer-container">
@@ -177,7 +234,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="output.html">Output</a></li>
-                <li><a href="https://x.com/kinki_touhou" target="_blank">X (Twitter)</a></li>
+                <li><a href="https://x.com/kinki_touhou" target="_blank">Twitter(X)</a></li>
             </ul>
 
             <p class="copyright">
@@ -189,3 +246,4 @@
 </body>
 
 </html>
+
