@@ -1,0 +1,101 @@
+/* =========================================
+   Outputページ用（ギャラリー配置）
+   ========================================= */
+
+.output{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.gallery-container {
+    display: flex;       /* 横並びにする */
+    flex-wrap: wrap;     /* 端まで来たら折り返す */
+    gap: 30px;           /* カード同士の隙間 */
+    padding: 20px;       /* 全体の余白 */
+    max-width: 1000px;   /* 広がりすぎないように */
+    margin: 0 auto;      /* 画面中央に配置 */
+}
+
+/* outputページではカードの幅を固定しないと崩れることがあるので念押し */
+.gallery-container .card {
+    width: 300px; /* カードの幅を固定 */
+    /* max-widthは解除しておくと綺麗に並びます */
+    max-width: none; 
+}
+
+/* スマホの時はカードを少し小さく、あるいは1列にする */
+@media screen and (max-width: 600px) {
+    .gallery-container .card {
+        width: 100%; /* スマホなら画面幅いっぱい */
+        max-width: 350px;
+    }
+}
+
+/* --- フィルタボタンのデザイン --- */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #fff;
+    border: 2px solid #d32f2f;
+    color: #d32f2f;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* 選ばれているボタンのデザイン */
+.filter-btn.active, .filter-btn:hover {
+    background: #d32f2f;
+    color: white;
+}
+
+/* --- 小説カードの特別設定 --- */
+.gallery-item[data-category="novel"] .card-text {
+    text-align: left; /* 小説は左揃えの方が読みやすい */
+}
+
+.novel-preview {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    /* 3行以上は「...」で省略する設定 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    display: inline-block;
+    color: #d32f2f;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px dashed #d32f2f;
+}
+
+/* --- アニメーション用クラス --- */
+.hide {
+    display: none; /* 消す */
+}
+
+.show {
+    animation: fadeInGallery 0.5s ease; /* ふわっと出す */
+}
+
+@keyframes fadeInGallery {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

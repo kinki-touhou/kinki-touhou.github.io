@@ -1,4 +1,13 @@
 /*クラスは.（クラス名）から始める*/
+body {
+    
+    /*背景画像の設定*/
+    background-image: 
+        linear-gradient(to bottom, white 600px, transparent 750px),
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url('./japanese-paper.jpg');
+    background-repeat: repeat;
+}
 .logo img {
     width: 80%;
     /*px（ピクセル）でも画面に対する比率（％）でもオッケー*/
@@ -15,30 +24,111 @@
     text-align: center;
 }
 
+.twitter-tweet {
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* --- セクション（活動風景・年間予定・交流）の共通設定 --- */
+.nenkan-yotei .nenkan-yotei-container{
+    display: flex;       /* 横並びにする魔法 */
+    flex-wrap: wrap;     /* 画面幅が足りなくなったら折り返す（改行） */
+    gap: 3px;           /* カード同士の隙間 */
+    padding: 20px;       /* 外側の余白 */
+    max-width: 1000px;   /* 広がりすぎ防止 */
+    margin: 0 auto;      /* 画面中央に配置 */
+}
+
+.nenkan-yotei .nenkan-yotei-container .card {
+    width: auto;
+    height : auto;
+}
+
 .katsudo-fukei img {
     margin: 0 auto;
     display: block;
 }
 
-
-.nenkan-yotei img {
-    display: block;
-    margin: 0 auto;
+.katsudo-fukei p{
+    margin: 20px auto;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
 }
+
+.kouryuu {
+    flex-wrap: wrap;     /* 画面幅が足りなくなったら折り返す（改行） */
+    gap: 3px;           /* カード同士の隙間 */
+    padding: 20px;       /* 外側の余白 */
+    max-width: 1000px;   /* 広がりすぎ防止 */
+    margin: 0 auto; 
+}
+
+.kouryuu p{
+    font-size:16px ;
+}
+
+/* --- 見出し（h2）のデザイン共通化 --- */
+.katsudo-fukei h2, 
+.nenkan-yotei h2, 
+.kouryuu h2, 
+.slider-section h2, 
+.about h2, 
+.output h2 {
+    /* 以前の下線をリセット */
+    border-bottom: none;
+    display: block; /* インラインからブロックに変えて幅を持たせる */
+    /* 左側に太い赤線（御札の背） */
+    border-left: 10px solid #d32f2f;
+    /* 背景をうっすら赤くする */
+    background: linear-gradient(to right, #fff0f0, transparent);
+    padding: 10px 15px; /* 文字の周りに余白 */
+    margin-bottom: 30px;
+    text-align: left; /* 左寄せにする */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);/* 影をつけて少し浮かせる */
+}
+/* ここまでセクション共通設定 */
 
 .flexbox1 {
     display: flex;
-    /*要素を横並びや縦並びにする*/
     flex-direction: row;
-    /*横並び（縦並びはcolumn）*/
-    justify-content: center; /* ★追加: 画面の真ん中に寄せる */
+    justify-content: center; 
+    background-color: #222;
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0;
+    list-style: none; 
+    padding-left: 0; /* 左の余計な隙間をリセット */
 }
 
-    .flexbox1 li {
-        margin-left: 8.0rem;
-        /*文字幅を確保できるよ*/
-    }
+.flexbox1 li {
+    font-family: 'Shippori Mincho', serif;
+    margin: 0 50px; /* ★「左右に30pxずつ」の隙間を作る */
+}
 
+.flexbox1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+    display: block; /* クリック範囲を安定させる */
+}
+
+.flexbox1 a:hover {
+    background-color: #ab5151;
+    color: white;
+}
+
+.flexbox1 a.current {
+    background-color: #d32f2f; /* 赤い背景 */
+    color: white;              /* 白文字 */
+    pointer-events: none;      /* クリックできないようにする（今いるページなので） */
+    order: 1px solid #fff;
+}
 p {
     font-size: 80%;
 }
@@ -123,10 +213,6 @@ p {
 
 /*ここまでスライドショー関連*/
 
-.whitespace {
-    height: 30px;
-    width: auto;
-}
 /*ここから各画像の動作設定*/
 /*クラスの名前は適当だから自由に変えてね*/
 .card {
@@ -165,11 +251,72 @@ p {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 /* マウスが乗った時 (:hover) */
+/* カードにマウスを乗せた時の動き */
 .card:hover {
-    /* 上に10px浮く & 1.05倍に拡大 */
-    transform: translateY(-10px) scale(1.05); 
-    box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(211, 47, 47, 0.4); 
+    filter: brightness(1.1);
 }
 
 
 /*ここまで各画像の動作設定*/
+
+/* =========================================
+   スマホ対応（レスポンシブ設定）
+   ========================================= */
+
+/* 「もし画面の幅が600px以下なら」という条件 */
+@media screen and (max-width: 600px) {
+
+    /* 1. メニューバーを縦並びにする */
+    .flexbox1 {
+        gap: 15px; /* 項目同士の間隔 */
+        height :25px;
+    }
+
+    /* 2. メニュー項目の余白調整 */
+    .flexbox1 li {
+        margin: 0; /* PC用の横の隙間をリセット */
+        padding-bottom: 10px; /* 線との隙間 */
+        width: 100%; /* 横幅いっぱいに */
+    }
+
+    /* 3. タイトル文字を少し小さくする */
+    .welcome-font {
+        font-size: 20px; /* PCだと大きすぎるので小さく */
+    }
+
+    /* 4. スライドショーの矢印を消す */
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; 
+    }
+
+    /* 5. 全体の余白を調整 */
+    .slider-section, .nenkan-yotei, .katsudo-fukei, .kouryuu {
+        width: 90%; /* 画面ギリギリにならないように */
+        padding: 10px; /* 内側の余白を少し減らす */
+    }
+
+    .card{
+        size :auto; 
+        }
+}
+
+/* =========================================
+   ページ全体のフェードインアニメーション
+   ========================================= */ 
+@keyframes fadeInAnime {
+    0% {
+        opacity: 0;             /* 最初は透明 */
+        transform: translateY(20px); /* 少し下にいる */
+    }
+    100% {
+        opacity: 1;             /* 最後はくっきり */
+        transform: translateY(0);    /* 元の位置に戻る */
+    }
+}
+
+.first-visit {
+    animation: fadeInAnime 1.5s ease-out; /* 少しゆっくりにして優雅に */
+}

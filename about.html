@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+ <!--htmlで書いてるよ〜-->
+<html lang="ja">
+ <!--日本語だよ-->
+
+<head>
+    <title>東方永萃地</title>
+    <meta charset="UTF-8"> <!--unicodeだよ標準規格-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--スマホ対応-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet"> */ <!--フォント導入-->
+    <link rel="stylesheet" href="./style.css"> <!--css導入-->
+    <link rel="stylesheet" href="./about.css"> <!--css導入-->
+    <link rel="stylesheet" href="./footer.css"> <!--css導入-->
+    <link rel="stylesheet" href="./cherry_blossom.css"> <!--css導入-->
+    <link rel="stylesheet" href="./loading.css"> <!--css導入-->
+    <link rel="stylesheet" href="./font.css"> <!--css導入-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="icon" href="./favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="./favicon.ico">
+</head>
+
+<body>
+    <div id="loading">
+        <div class="yin-yang"></div>
+        <p>少女祈祷中...</p>
+    </div>
+
+    
+     <div class="logo">
+        <!--えーすいちロゴ-->
+        <a href="https://x.com/kinki_touhou?s=21&t=CS9Oyks_KCsEeIwwuKftSg">
+            <!--Twitterリンク挿入-->
+            <img src="./eisuichi_header.jpeg">
+        </a>
+    </div>
+    <h1 class="welcome-font">よおこそ いらっしゃいませ!</h1> <!--zun-->
+    <h4>東方永萃地はきっと近畿大学の東方サークルです。</h4> <!--ちがうかも()-->
+
+
+    <hr>
+    <ul class="flexbox1">
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="about.html" class="current">About Us</a>
+        </li>
+
+        <li>
+            <a href="output.html">Output</a>
+        </li>
+
+        <li>
+            <a href="https://x.com/kinki_touhou?s=21&t=CS9Oyks_KCsEeIwwuKftSg" >Twitter(X)</a>
+        </li>
+    </ul>
+   <div class="about"> <h2>・About Us</h2>
+        <p>東方永萃地（とうほうえいすいち）へようこそ。</p>
+        <p>私たちは近畿大学で活動する、東方Projectを愛するサークルです。</p>
+        <br>
+        <p>活動場所：東大阪キャンパスのどこか！</p>
+        <p>活動頻度：週に2回</p>
+        <p>主な活動内容：東方Projectの原作プレイ、ボードゲーム、イベント参加など</p>
+        <br>
+        <p>私たちは東方Projectを通じて、メンバー同士の交流や創作活動を楽しんでいます。</p>
+        <p>新しいメンバーも随時募集していますので、興味のある方はぜひTwitterのDMにてご連絡ください！</p>
+        <br>
+        <p>これまでの活動内容の多くも永萃地Twitterに掲載しています！ぜひ目を通してみて下さい</p>
+    </div>
+
+    <div class="katsudo-fukei">
+        <img src="./2025_eisuichi/2025_eisuichi_5.webp" width="40%">
+        <p></p>
+    </div>
+    <div class="katsudo-fukei">
+        <img src="./2025_eisuichi/2025_eisuichi_16.webp" width="40%">
+        <p></p>
+    </div>
+
+     <script>
+        // 花びらを生成する関数
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // ランダムな位置（左端から右端のどこか）
+            petal.style.left = Math.random() * 100 + 'vw';
+            
+            // ランダムなアニメーション時間（落ちるスピードにバラつきを出す）
+            // 5秒 〜 10秒の間
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+            
+            // ランダムな大きさ（大小をつける）
+            const size = Math.random() * 10 + 10; // 10px 〜 20px
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+
+            // bodyに追加
+            document.body.appendChild(petal);
+
+            // アニメーションが終わったら（10秒後）要素を消す（メモリ節約）
+            setTimeout(() => {
+                petal.remove();
+            }, 10000);
+        }
+
+        // 300ミリ秒（0.3秒）ごとに花びらを1枚生成する
+        setInterval(createPetal, 300);
+    </script>
+
+
+    <script>
+        window.addEventListener('load', function() {
+            // 画面の読み込みが完全に終わったら実行
+            const loadingScreen = document.getElementById('loading');
+            
+            // 少しだけ待ってから消すと余韻があって良い（0.8秒待機）
+            setTimeout(function() {
+                loadingScreen.classList.add('loaded');
+            }, 800);
+        });
+    </script>
+
+
+    <footer>
+        <div class="footer-container">
+            
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="output.html">Output</a></li>
+                <li><a href="https://x.com/kinki_touhou" target="_blank">Twitter(X)</a></li>
+            </ul>
+
+            <p class="copyright">
+                &copy; 2025 東方永萃地 (近畿大学東方サークル)
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

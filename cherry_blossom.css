@@ -1,0 +1,36 @@
+/* =========================================
+   桜のアニメーション
+   ========================================= */
+
+/* 花びら自体の設定 */
+.petal {
+    position: fixed;            /* 画面に固定（スクロールについてもくる） */
+    top: -10px;                 /* 画面のちょっと上からスタート */
+    z-index: 100;               /* 他の要素より手前に表示 */
+    pointer-events: none;       /* ★重要：花びらの下のリンクを押せるようにする */
+    
+    background: #ffc0cb;        /* ピンク色 */
+    width: 15px;                /* 幅 */
+    height: 15px;               /* 高さ */
+    border-radius: 150% 0 150% 0; /* 角を丸くして花びらの形にする */
+    opacity: 0.8;
+    
+    /* アニメーションの設定 */
+    animation: fall linear infinite;
+
+    will-change: transform, opacity;
+}
+
+/* 落ちる動き（上から下へ、ゆらゆらと） */
+@keyframes fall {
+    0% {
+        top: -10px;
+        transform: rotate(0deg) translateX(0);
+        opacity: 0.8;
+    }
+    100% {
+        top: 100vh;             /* 画面の一番下まで */
+        transform: rotate(360deg) translateX(50px); /* くるくる回って右に流れる */
+        opacity: 0;             /* 最後は消える */
+    }
+}

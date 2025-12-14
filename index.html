@@ -6,12 +6,35 @@
 <head>
     <title>東方永萃地</title>
     <meta charset="UTF-8"> <!--unicodeだよ標準規格-->
+    <link rel="preload" as="image" href="./japanese-paper.jpg"><!--背景画像の先読み込み-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet"> <!--フォント導入-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--スマホ対応-->
     <link rel="stylesheet" href="./style.css"> <!--css導入-->
+    <link rel="stylesheet" href="./footer.css"> <!--css導入-->
+    <link rel="stylesheet" href="./cherry_blossom.css"> <!--css導入-->
+    <link rel="stylesheet" href="./loading.css"> <!--css導入-->
+    <link rel="stylesheet" href="./font.css"> <!--css導入--> 
+    <link rel="stylesheet" href="./countdown.css"> <!--css導入-->    
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="icon" href="./favicon.ico?v=2">
+    <link rel="apple-touch-icon" href="./favicon.ico">
+    <!-- SNS共有用メタタグ -->
+    <meta property="og:title" content="東方永萃地 - 近畿大学非公認東方サークル">
+    <meta property="og:description" content="近畿大学で活動する東方Projectサークル「東方永萃地」の公式サイトです。">
+    <meta property="og:url" content="https://kinki-touhou.github.io/output.html">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_banners/4581425365/1659368171/1500x500">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="東方永萃地">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
+    <div id="loading">
+        <div class="yin-yang"></div>
+        <p>少女祈祷中...</p>
+    </div>
+
     <div class="logo">
         <!--えーすいちロゴ-->
         <a href="https://x.com/kinki_touhou?s=21&t=CS9Oyks_KCsEeIwwuKftSg">
@@ -26,22 +49,26 @@
     <hr>
     <ul class="flexbox1">
         <li>
-            <p>Home</p>
+            <a href="index.html" class="current">Home</a>
         </li>
 
         <li>
-            <p>About Us</p>
+            <a href="about.html">About Us</a>
         </li>
 
         <li>
-            <p>output</p>
+            <a href="output.html">Output</a>
+        </li>
+
+        <li>
+            <a href="https://x.com/kinki_touhou?s=21&t=CS9Oyks_KCsEeIwwuKftSg" >Twitter(X)</a>
         </li>
     </ul>
     <!--適当すぎるクラス名-->
     <div class="katsudo-fukei">
         <h2>・活動風景</h2>
         <!--Twitterから適当に引っ張ってきて新鮮さを保とう！-->
-        <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium" width=60%> <!--画像のデカさ個々で調整可能-->
+        <img src="https://pbs.twimg.com/media/GmzhFogb0AAqQB4?format=jpg&name=medium" width=40%> <!--画像のデカさ個々で調整可能-->
         <p>美味しく頂いています。</p> <!--zun-->
         <blockquote class="twitter-tweet">
             <p lang="ja" dir="ltr">
@@ -52,12 +79,21 @@
             </a>
         </blockquote>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    </div>
+
+    <div class="countdown-container">
+    <h3>次の「東方紅楼夢」まで</h3>
+    <div id="timer">
+        <span id="days">00</span>日
+        <span id="hours">00</span>時間
+    </div>
+    <p>（2026年10月11日 開催予定）</p>
     </div>
 
 
-
     <div class="slider-section">
-        <h2>・活動風景</h2>
+        <h2>・This is ...</h2>
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -107,6 +143,51 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide">
+                     <div class="card-container">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="./2025_eisuichi/2025_eisuichi_13.webp" size = "40%">
+                            </div>
+
+                            <div class="card-text">
+                            <h3>This is EISUICHI travel</h3>
+                            <p>突発的に週末お出かけすることがあります</p> </div>
+
+                            <div class="badge">New!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                     <div class="card-container">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="./2025_eisuichi/2025_eisuichi_11.webp">
+                            </div>
+
+                            <div class="card-text">
+                            <h3>This is EISUICHI market</h3>
+                            <p>2025年秋に京都合同に向かった時の様子です</p> </div>
+
+                            <div class="badge">New!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                     <div class="card-container">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="./2025_eisuichi/2025_eisuichi_17.webp">
+                            </div>
+
+                            <div class="card-text">
+                            <h3>This is EISUICHI Reidai Fes</h3>
+                            <p>2025年秋に例大祭に出店しました！</p> </div>
+
+                            <div class="badge">New!</div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -117,11 +198,20 @@
         </div>
     </div>
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        let swiper = new Swiper('.swiper-container', {
             // ループ再生
             loop: true,
             slidesPerView: 1,     // 「1枚だけ」表示する
             spaceBetween: 30,     // 見えてないけど、隣のスライドとの隙間を少し空けておく
+            centeredSlides: true, // アクティブなスライドを中央にする
+            spaceBetween: 30,     // スライド間の隙間
+            speed: 600,           // 切り替わるスピード（ミリ秒）。
+
+             autoplay: {
+                delay: 3000,      // 3秒ごとに切り替え
+                disableOnInteraction: false, // ユーザーが触っても自動再生を止めない
+            },
+
             // ページネーション（点々）
             pagination: { 
                 el: '.swiper-pagination',
@@ -141,20 +231,140 @@
 
     <div class="nenkan-yotei">
         <h2>・年間予定</h2> <!--理想でもいーよ-->
-        <p>夏と冬にサークル旅行</p>
-        <p>春秋例大祭・紅楼夢にて同人誌を頒布</p>
-        <p>サークル代表は紅楼夢翌日から交代してます</p>
+        <div class="nenkan-yotei-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="./2025_eisuichi/2025_eisuichi_8.webp" width="40%">
+                </div>
+                <div class="card-text">
+                    <h3>新入生歓迎 桜を見る会</h3>
+                    <p>毎年 春</p> </div>
+            </div>
+              
+            <div class="card">
+                <div class="card-image">
+                    <img src="./2025_eisuichi/2025_eisuichi_15.webp" width="40%">
+                    <img src="./2025_eisuichi/2025_eisuichi_14.webp" width="40%">
+                </div>
+
+                <div class="card-text">
+                    <h3>夏と冬にサークル旅行</h3>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="./2025_eisuichi/2025_eisuichi_10.webp" width="40%">
+                </div>
+
+                <div class="card-text">
+                    <h3>春秋例大祭・紅楼夢にて同人誌を頒布</h3>
+                    <p>サークル代表は紅楼夢翌日から交代してます</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="nenkan-yotei">
+    <div class="kouryuu">
         <!--画像貼りたい、ていうか下に空白のスペースもっと欲しい-->
         <h2>・交流</h2>
+        <p>・東方我楽多叢誌さまに2025年度新メンバー募集の掲示をしていただきました！</p>
         <a href="https://touhougarakuta.com/news/daigaku_2025_01/">
             <p>2025年度新メンバー募集＠東方我楽多叢誌さま</p>
         </a>
+        <br>
+        <p>・龍谷大学の東龍門へお邪魔させていただきました～＠2024</p>
+        <img src="./2025_eisuichi/2025_eisuichi_12.webp" width="60%">
+        
     </div>
-    <div class="whitespace">
-    </div>
-</body>
+  
+    <script>
+        // 花びらを生成する関数
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // ランダムな位置（左端から右端のどこか）
+            petal.style.left = Math.random() * 100 + 'vw';
+            
+            // ランダムなアニメーション時間（落ちるスピードにバラつきを出す）
+            // 5秒 〜 10秒の間
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+            
+            // ランダムな大きさ（大小をつける）
+            const size = Math.random() * 10 + 10; // 10px 〜 20px
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
 
+            // bodyに追加
+            document.body.appendChild(petal);
+
+            // アニメーションが終わったら（10秒後）要素を消す（メモリ節約）
+            setTimeout(() => {
+                petal.remove();
+            }, 10000);
+        }
+
+        // 300ミリ秒（0.3秒）ごとに花びらを1枚生成する
+        setInterval(createPetal, 300);
+
+        window.addEventListener('load', function() {
+            // 画面の読み込みが完全に終わったら実行
+            const loadingScreen = document.getElementById('loading');
+            
+            // 少しだけ待ってから消すと余韻があって良い（0.8秒待機）
+            setTimeout(function() {
+                loadingScreen.classList.add('loaded');
+            }, 800);
+        });
+    </script>
+
+
+    <footer>
+        <div class="footer-container">
+            
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="output.html">Output</a></li>
+                <li><a href="https://x.com/kinki_touhou" target="_blank">Twitter(X)</a></li>
+            </ul>
+
+            <p class="copyright">
+                &copy; 2025 東方永萃地 (近畿大学東方サークル)
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ブラウザの「セッションストレージ（一時的な記憶）」をチェック
+        if (!sessionStorage.getItem('visited')) {
+            // 1. bodyに「first-visit」クラスをつけて、アニメーションを発動させる
+            document.body.classList.add('first-visit');
+            // 2. 「もう来ました」というハンコ（visited）を押しておく
+            sessionStorage.setItem('visited', 'true');
+        }
+            const eventDate = new Date("October 11, 2026 10:00:00").getTime();
+            const now = new Date().getTime();
+            const gap = eventDate - now;
+
+            // 計算（ミリ秒を日・時に直す）
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+
+            // 画面に表示
+            if (gap > 0) {
+                document.getElementById("days").innerText = textDay;
+                document.getElementById("hours").innerText = textHour;
+            } else {
+                document.getElementById("timer").innerText = "開催当日！";
+            }
+        countdown();
+    </script>
+    </body>
 </html>
