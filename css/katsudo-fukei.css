@@ -1,0 +1,33 @@
+.katsudo-fukei {
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+.katsudo-fukei img {
+    margin: 0 auto;
+    display: block;
+}
+
+.katsudo-fukei p{
+    margin: 20px auto;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* --- 見出し（h2）のデザイン共通化 --- */
+.katsudo-fukei h2{
+
+    text-align: center;
+    border-bottom: none;
+    display: block; /* インラインからブロックに変えて幅を持たせる */
+    /* 左側に太い赤線（御札の背） */
+    border-left: 10px solid #d32f2f;
+    /* 背景をうっすら赤くする */
+    background: linear-gradient(to right, #fff0f0, transparent);
+    padding: 10px 15px; /* 文字の周りに余白 */
+    margin-bottom: 30px;
+    text-align: left; /* 左寄せにする */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);/* 影をつけて少し浮かせる */
+}
+/* ここまでセクション共通設定 */
