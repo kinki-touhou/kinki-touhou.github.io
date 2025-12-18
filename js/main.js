@@ -1,54 +1,62 @@
-// 花びらを生成する関数
+/* =========================================
+   メインJavaScript (main.js)
+   ========================================= */
+
+// ▼▼▼ 1. ページ読み込み完了時の処理まとめ ▼▼▼
+window.addEventListener('load', function() {
+    console.log("ページ読み込み完了");
+    
+    // 各機能の起動
+    loadScreen();      // ローディング画面
+    countDownKouroumu(); // カウントダウン
+    loadTexts();       // テキスト読み込み
+});
+
+
+// ▼▼▼ 2. ローディング画面 ▼▼▼
+function loadScreen() {
+    const loadingScreen = document.getElementById('loading');
+    if (loadingScreen) {
+        // 0.8秒後にクラスを追加してフェードアウト
+        setTimeout(function() {
+            loadingScreen.classList.add('loaded');
+        }, 800);
+    }
+}
+
+
+// ▼▼▼ 3. 桜のアニメーション ▼▼▼
 function createPetal() {
     const petal = document.createElement('div');
     petal.classList.add('petal');
-    
-    // ランダムな位置（左端から右端のどこか）
     petal.style.left = Math.random() * 100 + 'vw';
-    
-    // ランダムなアニメーション時間（落ちるスピードにバラつきを出す）
-    // 5秒 〜 10秒の間
     petal.style.animationDuration = Math.random() * 5 + 5 + 's';
-    
-    // ランダムな大きさ（大小をつける）
-    const size = Math.random() * 10 + 10; // 10px 〜 20px
+    const size = Math.random() * 10 + 10;
     petal.style.width = size + 'px';
     petal.style.height = size + 'px';
-
-    // bodyに追加
+    
     document.body.appendChild(petal);
-
-    // アニメーションが終わったら（10秒後）要素を消す（メモリ節約）
+    
     setTimeout(() => {
         petal.remove();
     }, 10000);
 }
-
-// 300ミリ秒（0.3秒）ごとに花びらを1枚生成する
+// 桜を開始
 setInterval(createPetal, 300);
-/*桜ここまで*/
 
-/*ローディング画面*/
-function loadScreen() {
-            // 画面の読み込みが完全に終わったら実行
-            const loadingScreen = document.getElementById('loading');
-            
-            // 少しだけ待ってから消すと余韻があって良い（0.8秒待機）
-            setTimeout(function() {
-                loadingScreen.classList.add('loaded');
-            }, 800);
 
-            
-        };
-/*ローディング画面ここまで*/
+// ▼▼▼ 4. カウントダウンタイマー（1秒ごとに更新） ▼▼▼
+function countDownKouroumu() {
+    // タイマーの要素があるか確認（ないページでのエラー防止）
+    const timerElement = document.getElementById("timer");
+    if (!timerElement) return;
 
-/*カウントダウン*/
-function countDownKouroumu(){
+    // 内部で計算して表示する関数
+    function updateTimer() {
         const eventDate = new Date("October 11, 2026 10:00:00").getTime();
         const now = new Date().getTime();
         const gap = eventDate - now;
 
-        // 計算（ミリ秒を日・時に直す）
         const second = 1000;
         const minute = second * 60;
         const hour = minute * 60;
@@ -57,11 +65,66 @@ function countDownKouroumu(){
         const textDay = Math.floor(gap / day);
         const textHour = Math.floor((gap % day) / hour);
 
-        // 画面に表示
         if (gap > 0) {
-            document.getElementById("days").innerText = textDay;
-            document.getElementById("hours").innerText = textHour;
+            const elDays = document.getElementById("days");
+            const elHours = document.getElementById("hours");
+            if(elDays) elDays.innerText = textDay;
+            if(elHours) elHours.innerText = textHour;
         } else {
-            document.getElementById("timer").innerText = "開催当日！";
+            timerElement.innerText = "開催当日！";
         }
+    }
+
+    // 初回実行
+    updateTimer();
+    // 以後、1秒ごとに更新
+    setInterval(updateTimer, 1000);
+}
+
+
+// ▼▼▼ 5. テキスト自動読み込み機能 (fetch) ▼▼▼
+function loadTexts() {
+    const targets = document.querySelectorAll('.text-loader');
+    targets.forEach(element => {
+        const filePath = element.getAttribute('data-src');
+        if (!filePath) return;
+
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) throw new Error('File not found: ' + filePath);
+                return response.text();
+            })
+            .then(data => {
+                element.innerText = data;
+            })
+            .catch(error => {
+                element.innerText = "読み込み失敗";
+                console.error('Error:', error);
+            });
+    });
+}
+
+
+// ▼▼▼ 6. スライドショー (Swiper) ▼▼▼
+// ページ内にスライドショーがある場合のみ実行
+if (document.querySelector('.swiper-container')) {
+    let swiper = new Swiper('.swiper-container', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        speed: 600,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: { 
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 }

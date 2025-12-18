@@ -4,7 +4,7 @@ body {
     /*背景画像の設定*/
     background-image: 
         linear-gradient(to bottom, white 600px, transparent 750px),
-        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
         url('./../img/japanese-paper.jpg');
     background-repeat: repeat;
 }
@@ -28,67 +28,7 @@ body {
     margin: 0 auto;
     display: block;
 }
-
-
-/* --- セクション（活動風景・年間予定・交流）の共通設定 --- */
-
-.nenkan-yotei{
-    max-width: 60%;   /* 広がりすぎ防止 */
-    margin: 0 auto;      /* 画面中央に配置 */
-
-}
-
-.nenkan-yotei .nenkan-yotei-container{
-    display: flex;       /* 横並びにする魔法 */
-    flex-wrap: wrap;     /* 画面幅が足りなくなったら折り返す（改行） */
-    gap: 3px;           /* カード同士の隙間 */
-    padding: 20px;       /* 外側の余白 */
-    max-width: 1000px;   /* 広がりすぎ防止 */
-    margin: 0 auto;      /* 画面中央に配置 */
-}
-
-.nenkan-yotei .nenkan-yotei-container .card {
-    width: auto;
-    height : auto;
-}
-
-.katsudo-fukei {
-    margin: 0 auto;
-    max-width: 60%;
-}
-
-.katsudo-fukei img {
-    margin: 0 auto;
-    display: block;
-}
-
-.katsudo-fukei p{
-    margin: 20px auto;
-    text-align: center;
-    max-width: 800px;
-    padding: 0 20px;
-}
-
-.kouryuu {
-    flex-wrap: wrap;     /* 画面幅が足りなくなったら折り返す（改行） */
-    gap: 3px;           /* カード同士の隙間 */
-    padding: 20px;       /* 外側の余白 */
-    max-width: 60%;   /* 広がりすぎ防止 */
-    margin: 0 auto; 
-}
-
-.kouryuu p{
-    font-size:20px ;
-}
-
-.kouryuu img{
-    width : 80%;
-}
-
 /* --- 見出し（h2）のデザイン共通化 --- */
-.katsudo-fukei h2, 
-.nenkan-yotei h2, 
-.kouryuu h2, 
 .slider-section h2, 
 .about h2, 
 .output h2 {
@@ -144,11 +84,15 @@ body {
     background-color: #d32f2f; /* 赤い背景 */
     color: white;              /* 白文字 */
     pointer-events: none;      /* クリックできないようにする（今いるページなので） */
-    order: 1px solid #fff;
 }
 p {
     font-size: 80%;
 }
+/* テキスト読み込みエリアの共通設定 */
+.text-loader {
+    /* ★必須：テキストファイルの改行やスペースをそのまま表示する */
+    white-space: pre-wrap;
+  }
 
 /* 以下、画像スライドショー用 */
 

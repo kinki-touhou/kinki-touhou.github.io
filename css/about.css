@@ -3,7 +3,7 @@
     max-width: 60%;
 }
 
-.about p{
+.about .text-loader {
     text-align: center;
     font-size: 16px;
 }

@@ -1,0 +1,38 @@
+
+/* --- セクション（活動風景・年間予定・交流）の共通設定 --- */
+
+.nenkan-yotei{
+    max-width: 60%;   /* 広がりすぎ防止 */
+    margin: 0 auto;      /* 画面中央に配置 */
+
+}
+
+.nenkan-yotei .nenkan-yotei-container{
+    display: flex;       /* 横並びにする魔法 */
+    flex-wrap: wrap;     /* 画面幅が足りなくなったら折り返す（改行） */
+    gap: 3px;           /* カード同士の隙間 */
+    padding: 20px;       /* 外側の余白 */
+    max-width: 1000px;   /* 広がりすぎ防止 */
+    margin: 0 auto;      /* 画面中央に配置 */
+}
+
+.nenkan-yotei .nenkan-yotei-container .card {
+    width: auto;
+    height : auto;
+}
+
+/* --- 見出し（h2）のデザイン共通化 --- */
+.nenkan-yotei h2{
+    text-align: center;
+    border-bottom: none;
+    display: block; /* インラインからブロックに変えて幅を持たせる */
+    /* 左側に太い赤線（御札の背） */
+    border-left: 10px solid #d32f2f;
+    /* 背景をうっすら赤くする */
+    background: linear-gradient(to right, #fff0f0, transparent);
+    padding: 10px 15px; /* 文字の周りに余白 */
+    margin-bottom: 30px;
+    text-align: left; /* 左寄せにする */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);/* 影をつけて少し浮かせる */
+}
+/* ここまでセクション共通設定 */
