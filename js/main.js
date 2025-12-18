@@ -167,23 +167,40 @@ function generateCards() {
                     badgeHTML = `<div class="badge ${item.category}">${item.badge}</div>`;
                 }
 
+                //4. 音声・動画プレイヤーの生成
+                let mediaHTML = '';
 
-                // 4. HTMLを組み立てる
+                // 音声ファイルがある場合
+                if (item.audio && item.audio !== "") {
+                    // <audio controls src="..."> を作る
+                    mediaHTML = `<audio controls src="${item.audio}" class="media-player"></audio>`;
+                }
+                // 動画ファイルがある場合
+                else if (item.video && item.video !== "") {
+                    // <video controls src="..."> を作る
+                    mediaHTML = `<video controls src="${item.video}" class="media-player"></video>`;
+                }
+
+
+                // 5. HTMLを組み立てる
                 const cardHTML = `
                     <div class="card gallery-item" data-category="${item.category}">
                         ${imageHTML}
                         <div class="card-text">
                             <h3>${item.title}</h3>
                             <p class="${item.category === 'novel' ? 'novel-preview' : ''}">${item.text}</p>
+                            
+                            ${mediaHTML}
+                            
                             ${linkHTML}
                         </div>
-                        ${badgeHTML} </div>
+                        ${badgeHTML}
+                    </div>
                 `;
 
                 container.insertAdjacentHTML('beforeend', cardHTML);
             });
 
-            // カードを作り終わったら、フィルタ機能を有効化する
             if (typeof initCategoryFilter === "function") {
                 initCategoryFilter();
             }

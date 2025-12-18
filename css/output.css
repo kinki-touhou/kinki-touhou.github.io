@@ -101,3 +101,17 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* オーディオ・ビデオプレイヤーの共通設定 */
+.media-player {
+    width: 100%;       /* カードの幅いっぱいに広げる */
+    margin-top: 10px;  /* 上の文字との隙間 */
+    outline: none;     /* 選択時の枠線を消す */
+    border-radius: 5px; /* 角を少し丸く */
+}
+
+/* 動画の場合は高さも自動調整 */
+video.media-player {
+    height: auto;
+    background: #000; /* 読み込み中は黒背景 */
+}

@@ -71,47 +71,54 @@
     "text": "最高品質A5ランク",
     "badge": "Art"
   },{
-    "category": "",
+    "category": "music",
     "image": "", 
-    "title": "",
-    "text": "",
-    "badge": "",
-    "link": ""
+    "title": "Kaijiken",
+    "text": "原曲アレンジだよん",
+    "badge": "Cool!",
+    "audio":"./2025_eisuichi/uraniwaTouhou/Kaijiken.wav"
   },{
-    "category": "",
+    "category": "music",
     "image": "", 
-    "title": "",
+    "title": "Pain Flow",
     "text": "",
-    "badge": "",
-    "link": ""
+    "badge": "Cool!",
+    "audio":"./2025_eisuichi/uraniwaTouhou/PainFlow.wav"
   },{
-    "category": "",
+    "category": "music",
     "image": "", 
-    "title": "",
+    "title": "Shutter",
     "text": "",
-    "badge": "",
-    "link": ""
+    "badge": "Cool!",
+    "audio":"./2025_eisuichi/uraniwaTouhou/Shutter.wav"
   },{
-    "category": "",
+    "category": "music",
     "image": "", 
-    "title": "",
+    "title": "Gift",
     "text": "",
-    "badge": "",
-    "link": ""
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Gift.wav"
   },{
-    "category": "",
+    "category": "music",
     "image": "", 
-    "title": "",
+    "title": "雖牙ｦｬ",
     "text": "",
-    "badge": "",
-    "link": ""
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/雖牙ｦｬ.wav"
   },{
-    "category": "",
+    "category": "music",
     "image": "", 
-    "title": "",
+    "title": "Slow down",
     "text": "",
-    "badge": "",
-    "link": ""
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Slowdown.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "豺ｱ豺ｵ",
+    "text": "",
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/豺ｱ豺ｵ.wav"
   },
   {
     "category": "novel",
