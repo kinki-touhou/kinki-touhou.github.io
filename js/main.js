@@ -146,23 +146,34 @@ function generateCards() {
             // データからカードを作る
             data.forEach(item => {
                 
-                // 1. 画像がある時だけ画像タグを作る
+                // 1. 画像がある時だけ画像タグを作る（既存）
                 let imageHTML = '';
                 if (item.image && item.image !== "") {
                     imageHTML = `<div class="card-image"><img src="${item.image}" loading="lazy"></div>`;
                 }
 
-                // 2. リンクがある時だけリンクタグを作る
+                // 2. リンクがある時だけリンクタグを作る（既存）
                 let linkHTML = '';
                 if (item.link && item.link !== "") {
                     linkHTML = `<a href="${item.link}" class="read-more" target="_blank">詳細/読む</a>`;
                 }
 
-                // 3. バッジの色
-                let badgeStyle = '';
-                if(item.category === 'music') badgeStyle = 'background: linear-gradient(45deg, #4facfe, #00f2fe);';
-                else if(item.category === 'novel') badgeStyle = 'background: linear-gradient(45deg, #43e97b, #38f9d7);';
-                else if(item.category === 'illust') badgeStyle = 'background: linear-gradient(45deg, #e238ee, #d379e0);';
+                //3. バッジがある時だけバッジタグを作る
+                let badgeHTML = ''; // 最初は空っぽにしておく
+                
+                // もし badge に文字が入っていたら...
+                if (item.badge && item.badge !== "") {
+                    
+                    // 色を決める
+                    let badgeStyle = '';
+                    if(item.category === 'music') badgeStyle = 'background: linear-gradient(45deg, #4facfe, #00f2fe);';
+                    else if(item.category === 'novel') badgeStyle = 'background: linear-gradient(45deg, #43e97b, #38f9d7);';
+                    else if(item.category === 'illust') badgeStyle = 'background: linear-gradient(45deg, #e238ee, #d379e0);';
+                    
+                    // HTMLを作る
+                    badgeHTML = `<div class="badge" style="${badgeStyle}">${item.badge}</div>`;
+                }
+
 
                 // 4. HTMLを組み立てる
                 const cardHTML = `
@@ -173,8 +184,7 @@ function generateCards() {
                             <p class="${item.category === 'novel' ? 'novel-preview' : ''}">${item.text}</p>
                             ${linkHTML}
                         </div>
-                        <div class="badge" style="${badgeStyle}">${item.badge}</div>
-                    </div>
+                        ${badgeHTML} </div>
                 `;
 
                 container.insertAdjacentHTML('beforeend', cardHTML);
