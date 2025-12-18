@@ -31,6 +31,11 @@
     }
 }
 
+/* バッジの色をCSSで管理する */
+.badge.music { background: linear-gradient(45deg, #4facfe, #00f2fe); }
+.badge.novel { background: linear-gradient(45deg, #43e97b, #38f9d7); }
+.badge.illust { background: linear-gradient(45deg, #e238ee, #d379e0); }
+
 /* --- フィルタボタンのデザイン --- */
 .filter-buttons {
     display: flex;

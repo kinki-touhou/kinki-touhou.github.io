@@ -163,15 +163,8 @@ function generateCards() {
                 
                 // もし badge に文字が入っていたら...
                 if (item.badge && item.badge !== "") {
-                    
-                    // 色を決める
-                    let badgeStyle = '';
-                    if(item.category === 'music') badgeStyle = 'background: linear-gradient(45deg, #4facfe, #00f2fe);';
-                    else if(item.category === 'novel') badgeStyle = 'background: linear-gradient(45deg, #43e97b, #38f9d7);';
-                    else if(item.category === 'illust') badgeStyle = 'background: linear-gradient(45deg, #e238ee, #d379e0);';
-                    
                     // HTMLを作る
-                    badgeHTML = `<div class="badge" style="${badgeStyle}">${item.badge}</div>`;
+                    badgeHTML = `<div class="badge ${item.category}">${item.badge}</div>`;
                 }
 
 
