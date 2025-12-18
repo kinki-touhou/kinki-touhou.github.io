@@ -73,52 +73,52 @@
   },{
     "category": "music",
     "image": "", 
-    "title": "Kaijiken",
-    "text": "原曲アレンジだよん",
+    "title": "Kaijiken by うらにわ",
+    "text": "原曲: あなたの町の怪事件\nむわ〜っとした暖かみのあるアレンジになったと思います。こういう暖かくて愉快なサウンドはずっと作っていたいですね。耳と心に優しい。",
     "badge": "Cool!",
     "audio":"./2025_eisuichi/uraniwaTouhou/Kaijiken.wav"
   },{
     "category": "music",
     "image": "", 
-    "title": "Pain Flow",
-    "text": "",
+    "title": "Pain Flow by うらにわ",
+    "text": "原曲: 厄神様の通り道\nこの曲はドラムのリズムを最初に思いつき、それに鼻歌を乗せる感じでメロディを作りました。原曲に比べて大分忙しいアレンジになったのはそのためです。",
     "badge": "Cool!",
     "audio":"./2025_eisuichi/uraniwaTouhou/PainFlow.wav"
   },{
     "category": "music",
     "image": "", 
-    "title": "Shutter",
-    "text": "",
+    "title": "Release da Shutter by うらにわ",
+    "text": "原曲: 東の国の眠らない夜\n文がブンブン飛び回りながらシャッターをカシャカシャしてるイメージの曲です。後半でスネアが無くなってジャージークラブ的になるところ、結構お気に入りです。",
     "badge": "Cool!",
     "audio":"./2025_eisuichi/uraniwaTouhou/Shutter.wav"
   },{
     "category": "music",
     "image": "", 
-    "title": "Gift",
-    "text": "",
+    "title": "Gift by うらにわ",
+    "text": "原曲: ハートフェルトファンシー\nYouTubeのmellow grimeっていうプレイリストにハマってるときに作った。空気感と粗雑感が合わさった音楽が好きなんだ俺は。",
     "badge": "Chill...",
     "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Gift.wav"
   },{
     "category": "music",
     "image": "", 
-    "title": "雖牙ｦｬ",
-    "text": "",
+    "title": "嫉妬 by うらにわ",
+    "text": "原曲:緑眼のジェラシー\n音割れトラップミュージックがやりたかっただけかな",
     "badge": "Chill...",
-    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/雖牙ｦｬ.wav"
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Shitto.wav"
   },{
     "category": "music",
     "image": "", 
-    "title": "Slow down",
-    "text": "",
+    "title": "Slow down by うらにわ",
+    "text": "原曲: 華のさかづき大江山\n2025夏の暑中見舞い曲。気怠いリードやパッドに、ごろごろ野菜みたいなドラム。",
     "badge": "Chill...",
     "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Slowdown.wav"
   },{
     "category": "music",
     "image": "", 
-    "title": "豺ｱ豺ｵ",
-    "text": "",
+    "title": "深淵 by うらにわ",
+    "text": "原曲:暗闇の風穴\n暗く激しいのを作ろうとして出来た、手探りインダストリアルミュージック？嫉妬",
     "badge": "Chill...",
-    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/豺ｱ豺ｵ.wav"
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Shinen.wav"
   },
   {
     "category": "novel",
