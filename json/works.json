@@ -1,0 +1,124 @@
+[
+  {
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_4.webp", 
+    "title": "東方永萃地 2025秋",
+    "text": "2025年 紅楼夢発行",
+    "badge": "New!"
+  },
+  {
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_9.webp", 
+    "title": "東方永萃地 2025春",
+    "text": "2025年 春例発行",
+    "badge": "New!"
+  },
+  {
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_6.webp", 
+    "title": "東方永萃地 2024",
+    "text": "2024年 発行"
+  },{
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_7.webp", 
+    "title": "東方永萃地 2023",
+    "text": "2023年 発行"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_2.webp", 
+    "title": "魂魄妖夢イラスト",
+    "text": "カワイイ",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_19.webp", 
+    "title": "博麗霊夢イラスト",
+    "text": "コレモカワイイ",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_21.webp", 
+    "title": "諏訪子ちゃん",
+    "text": "トニカクカワイイ",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_23.webp", 
+    "title": "ちぇぇぇぇぇん",
+    "text": "スタイル抜群",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_24.webp", 
+    "title": "6月9日はむきゅーの日",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_25.webp", 
+    "title": "古明地こいし",
+    "text": "脚ぴょこん",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_26.webp", 
+    "title": "フランドール・スカーレット",
+    "text": "ゆっくりフラン",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_27.webp", 
+    "title": "ナズーリン",
+    "text": "最高品質A5ランク",
+    "badge": "Art"
+  },{
+    "category": "",
+    "image": "", 
+    "title": "",
+    "text": "",
+    "badge": "",
+    "link": ""
+  },{
+    "category": "",
+    "image": "", 
+    "title": "",
+    "text": "",
+    "badge": "",
+    "link": ""
+  },{
+    "category": "",
+    "image": "", 
+    "title": "",
+    "text": "",
+    "badge": "",
+    "link": ""
+  },{
+    "category": "",
+    "image": "", 
+    "title": "",
+    "text": "",
+    "badge": "",
+    "link": ""
+  },{
+    "category": "",
+    "image": "", 
+    "title": "",
+    "text": "",
+    "badge": "",
+    "link": ""
+  },{
+    "category": "",
+    "image": "", 
+    "title": "",
+    "text": "",
+    "badge": "",
+    "link": ""
+  },
+  {
+    "category": "novel",
+    "image": "", 
+    "title": "【SS】クイックターン",
+    "text": "湖が「泳げ」と言っている。作：こは",
+    "badge": "Novel",
+    "link": "https://coolier.net/sosowa/ssw_l/242/1668169343"
+  }
+]

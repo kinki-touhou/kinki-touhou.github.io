@@ -10,6 +10,7 @@ window.addEventListener('load', function() {
     loadScreen();      // ローディング画面
     countDownKouroumu(); // カウントダウン
     loadTexts();       // テキスト読み込み
+    generateCards();   // 作品カード自動生成
 });
 
 
@@ -127,4 +128,62 @@ if (document.querySelector('.swiper-container')) {
             prevEl: '.swiper-button-prev',
         },
     });
+}
+
+// ▼▼▼ 7.JSONから作品カードを生成する機能 ▼▼▼
+function generateCards() {
+    const container = document.getElementById('gallery-list');
+    
+    // Outputページじゃないなら何もしない
+    if (!container) return;
+
+    fetch('./json/works.json')
+        .then(response => {
+            if (!response.ok) throw new Error('JSON not found');
+            return response.json();
+        })
+        .then(data => {
+            // データからカードを作る
+            data.forEach(item => {
+                
+                // 1. 画像がある時だけ画像タグを作る
+                let imageHTML = '';
+                if (item.image && item.image !== "") {
+                    imageHTML = `<div class="card-image"><img src="${item.image}" loading="lazy"></div>`;
+                }
+
+                // 2. リンクがある時だけリンクタグを作る
+                let linkHTML = '';
+                if (item.link && item.link !== "") {
+                    linkHTML = `<a href="${item.link}" class="read-more" target="_blank">詳細/読む</a>`;
+                }
+
+                // 3. バッジの色
+                let badgeStyle = '';
+                if(item.category === 'music') badgeStyle = 'background: linear-gradient(45deg, #4facfe, #00f2fe);';
+                else if(item.category === 'novel') badgeStyle = 'background: linear-gradient(45deg, #43e97b, #38f9d7);';
+                else if(item.category === 'illust') badgeStyle = 'background: linear-gradient(45deg, #e238ee, #d379e0);';
+
+                // 4. HTMLを組み立てる
+                const cardHTML = `
+                    <div class="card gallery-item" data-category="${item.category}">
+                        ${imageHTML}
+                        <div class="card-text">
+                            <h3>${item.title}</h3>
+                            <p class="${item.category === 'novel' ? 'novel-preview' : ''}">${item.text}</p>
+                            ${linkHTML}
+                        </div>
+                        <div class="badge" style="${badgeStyle}">${item.badge}</div>
+                    </div>
+                `;
+
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
+
+            // カードを作り終わったら、フィルタ機能を有効化する
+            if (typeof initCategoryFilter === "function") {
+                initCategoryFilter();
+            }
+        })
+        .catch(error => console.error('カード生成エラー:', error));
 }
