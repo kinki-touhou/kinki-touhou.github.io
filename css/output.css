@@ -115,3 +115,58 @@ video.media-player {
     height: auto;
     background: #000; /* 読み込み中は黒背景 */
 }
+
+/* --- 画像拡大モダールの設定 --- */
+.modal {
+    display: none; /* 普段は隠す */
+    position: fixed;
+    z-index: 1000; /* 最前面に */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* 背景を黒く透けさせる */
+}
+
+/* 拡大画像のスタイル */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px; /* PCでもデカくなりすぎないように */
+    max-height: 80vh; /* 画面からはみ出さないように */
+    object-fit: contain;
+    border: 2px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: zoom 0.3s; /* フワッと出すアニメーション */
+}
+
+/* 閉じるボタン（×） */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-btn:hover {
+    color: #bbb;
+}
+
+/* アニメーション定義 */
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* スマホ用の調整 */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}

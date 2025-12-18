@@ -207,3 +207,58 @@ function generateCards() {
         })
         .catch(error => console.error('カード生成エラー:', error));
 }
+
+
+// ▼▼▼ 画像拡大（ライトボックス）機能：デバッグ版 ▼▼▼
+
+// ページが完全に読み込まれてから準備する
+window.addEventListener('load', function() {
+    
+    // 1. 要素を見つける
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close-btn");
+    const galleryContainer = document.getElementById('gallery-list');
+
+    // コンソールに状況を表示（F12で確認できます）
+    console.log("拡大機能の準備:", {
+        modal: modal ? "OK" : "見つかりません (HTMLを確認!)",
+        gallery: galleryContainer ? "OK" : "見つかりません (IDを確認!)"
+    });
+
+    // 2. ギャラリーがある時だけ監視を開始
+    if (galleryContainer) {
+        galleryContainer.addEventListener('click', function(e) {
+            
+            // クリックされたものが何かコンソールに出す
+            console.log("クリックされたもの:", e.target.tagName);
+
+            // クリックされたのが「画像(IMG)」だったら実行
+            if (e.target.tagName === 'IMG') {
+                
+                // モダールを表示
+                if (modal) {
+                    modal.style.display = "block";
+                    modalImg.src = e.target.src; // 画像URLをコピー
+                    console.log("画像を拡大しました");
+                } else {
+                    console.error("エラー: #image-modal がHTMLにありません");
+                }
+            }
+        });
+    }
+
+    // 3. 閉じる処理
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+    if (modal) {
+        modal.onclick = function(e) {
+            if (e.target !== modalImg) {
+                modal.style.display = "none";
+            }
+        }
+    }
+});
