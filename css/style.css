@@ -319,3 +319,47 @@ p {
 .first-visit {
     animation: fadeInAnime 1.5s ease-out; /* 少しゆっくりにして優雅に */
 }
+
+
+/* =========================================
+   スマホ用：スライドショー高さ完全固定パッチ
+   ========================================= */
+
+@media screen and (max-width: 600px) {
+    
+    /* 1. スライド1枚の「高さ」を数値で固定してしまう */
+    /* これで中身がどうあれ、箱の大きさは絶対変わりません */
+    .swiper-slide {
+        height: 450px !important; /* ※高すぎたら数値を減らしてください */
+        display: flex;            /* 中身の配置を整える */
+        justify-content: center;  /* 横方向・中央 */
+    }
+
+    /* 2. カードをその高さ一杯まで広げる */
+    .swiper-slide .card {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* 上から順に並べる */
+        justify-content: flex-start; /* 上詰めにする */
+    }
+
+    /* 3. 画像の高さ制限（前回と同じ） */
+    .swiper-slide .card-image img {
+        height: 200px !important; /* 画像エリアの高さ */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* 4. テキストエリアの調整 */
+    .swiper-slide .card-text {
+        flex: 1;           /* 残りのスペースを使う */
+        overflow: hidden;  /* 万が一文字が多すぎても枠からはみ出させない */
+    }
+
+    /* 5. スライドショー全体の余白調整 */
+    .slider-section {
+        height: 500px; /* ページネーション（点々）を含めた場所確保 */
+        overflow: hidden;
+    }
+}
