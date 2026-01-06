@@ -27,8 +27,7 @@ root/
    |  └ japanese-paper.jpg
    ├ js
    |  ├ main.js
-   |  ├ category.js
-   |  └ slide.js
+   |  └ category.js
    ├ json
    |  └ works.json
    ├ txt

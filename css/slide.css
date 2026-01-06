@@ -1,0 +1,119 @@
+/* 以下、画像スライドショー用 */
+
+/* 新しいスライドショーエリアの設定 */
+.slider-section {
+    /* 上下の余白をあける */
+    margin: 0 auto;/* 中の文字（見出しなど）を中央揃えにする */
+    max-width: 800px;   /* 広がりすぎ防止 */
+    text-align: center;/* 幅が広がりすぎないように制限する（お好みで） */
+    padding: 0 0px;
+}
+
+/* スライドショーの「フィルム」部分の設定 */
+.swiper-wrapper {
+    display: flex;             /* 画像を横並びにする */
+    width: 100%;               /* 幅を確保する */
+    height: 100%;              /* 高さを確保する */
+}
+
+/* スライドショー全体のコンテナ */
+.swiper-container {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    /* 上下に余白、左右は自動で中央揃え */
+}
+
+/* 各スライドの設定 */
+.swiper-slide {
+    padding-bottom: 30px;/* 点々との間に余白を作る */
+    flex-shrink: 0;          /* 勝手に縮まないようにする */
+    width: auto;
+    box-sizing: border-box;  /* 枠線などを含めたサイズ計算にする */
+}
+
+.slide-card {
+    position: relative; /* 子要素(badge)の基準点 */
+    width: 100%; /* 親要素（スライド）の幅に合わせる */
+    background: white;
+    border-radius: 15px; /*  数値を変えると角の丸みが変わる */
+    overflow: hidden;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.slide-card-image {
+    width: 100%;
+    display: block;
+}
+
+.slide-card-text {
+    padding: 20px;
+}
+
+/* マウスが乗った時 (:hover) */
+/* カードにマウスを乗せた時の動き */
+.slide-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(211, 47, 47, 0.4); 
+    filter: brightness(1.1);
+}
+
+.slide-card-container {
+    width: 100%;
+}
+
+/* スライド内の画像 */
+.slide-card img {
+    width: 100%;/* 画像の幅をスライドに合わせる */
+    height: auto;/* 高さは自動調整 */
+    object-fit: cover;/* 画像の比率を保ったまま領域を埋める */
+    max-height: 500px;/* 画像が高くなりすぎないように制限 */
+}
+/*ここまで各画像の動作設定*/
+
+/* =========================================
+   スマホ用：スライドショー高さ完全固定パッチ
+   ========================================= */
+
+@media screen and (max-width: 600px) {
+    
+    /* 1. スライド1枚の「高さ」を数値で固定してしまう */
+    /* これで中身がどうあれ、箱の大きさは絶対変わりません */
+    .swiper-slide {
+        height: 450px !important; /* ※高すぎたら数値を減らしてください */
+        display: flex;            /* 中身の配置を整える */
+        justify-content: center;  /* 横方向・中央 */
+    }
+
+    /* 2. カードをその高さ一杯まで広げる */
+    .swiper-slide .card {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* 上から順に並べる */
+        justify-content: flex-start; /* 上詰めにする */
+    }
+
+    /* 3. 画像の高さ制限（前回と同じ） */
+    .swiper-slide .card-image img {
+        height: 200px !important; /* 画像エリアの高さ */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* 4. テキストエリアの調整 */
+    .swiper-slide .card-text {
+        flex: 1;           /* 残りのスペースを使う */
+        overflow: hidden;  /* 万が一文字が多すぎても枠からはみ出させない */
+    }
+
+    /* 5. スライドショー全体の余白調整 */
+    .slider-section {
+        height: 500px; /* ページネーション（点々）を含めた場所確保 */
+        overflow: hidden;
+    }
+}
+
