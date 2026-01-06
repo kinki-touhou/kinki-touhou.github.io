@@ -1,0 +1,151 @@
+[
+  {
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_4.webp", 
+    "title": "東方永萃地 2025秋",
+    "text": "2025年 紅楼夢発行",
+    "badge": "New!"
+  },
+  {
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_9.webp", 
+    "title": "東方永萃地 2025春",
+    "text": "2025年 春例発行",
+    "badge": "New!"
+  },
+  {
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_6.webp", 
+    "title": "東方永萃地 2024",
+    "text": "2024年 発行"
+  },{
+    "category": "book",
+    "image": "./2025_eisuichi/2025_eisuichi_7.webp", 
+    "title": "東方永萃地 2023",
+    "text": "2023年 発行"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_2.webp", 
+    "title": "魂魄妖夢イラスト",
+    "text": "カワイイ",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_19.webp", 
+    "title": "博麗霊夢イラスト",
+    "text": "コレモカワイイ",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_21.webp", 
+    "title": "諏訪子ちゃん",
+    "text": "トニカクカワイイ",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_23.webp", 
+    "title": "ちぇぇぇぇぇん",
+    "text": "スタイル抜群",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_24.webp", 
+    "title": "6月9日はむきゅーの日",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_25.webp", 
+    "title": "古明地こいし",
+    "text": "脚ぴょこん",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_26.webp", 
+    "title": "フランドール・スカーレット",
+    "text": "ゆっくりフラン",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_27.webp", 
+    "title": "ナズーリン",
+    "text": "最高品質A5ランク",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_28.webp", 
+    "title": "2025/12/19",
+    "text": "もうすぐクリスマス！",
+    "badge": "Art"
+  },{
+    "category": "illust",
+    "image": "./2025_eisuichi/2025_eisuichi_29.webp", 
+    "title": "火焔猫燐",
+    "text": "ニャ",
+    "badge": "Art"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "Kaijiken by うらにわ",
+    "text": "原曲: あなたの町の怪事件\nむわ〜っとした暖かみのあるアレンジになったと思います。こういう暖かくて愉快なサウンドはずっと作っていたいですね。耳と心に優しい。",
+    "badge": "Cool!",
+    "audio":"./2025_eisuichi/uraniwaTouhou/Kaijiken.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "Pain Flow by うらにわ",
+    "text": "原曲: 厄神様の通り道\nこの曲はドラムのリズムを最初に思いつき、それに鼻歌を乗せる感じでメロディを作りました。原曲に比べて大分忙しいアレンジになったのはそのためです。",
+    "badge": "Cool!",
+    "audio":"./2025_eisuichi/uraniwaTouhou/PainFlow.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "Release da Shutter by うらにわ",
+    "text": "原曲: 東の国の眠らない夜\n文がブンブン飛び回りながらシャッターをカシャカシャしてるイメージの曲です。後半でスネアが無くなってジャージークラブ的になるところ、結構お気に入りです。",
+    "badge": "Cool!",
+    "audio":"./2025_eisuichi/uraniwaTouhou/Shutter.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "Gift by うらにわ",
+    "text": "原曲: ハートフェルトファンシー\nYouTubeのmellow grimeっていうプレイリストにハマってるときに作った。空気感と粗雑感が合わさった音楽が好きなんだ俺は。",
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Gift.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "嫉妬 by うらにわ",
+    "text": "原曲:緑眼のジェラシー\n音割れトラップミュージックがやりたかっただけかな",
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Shitto.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "Slow down by うらにわ",
+    "text": "原曲: 華のさかづき大江山\n2025夏の暑中見舞い曲。気怠いリードやパッドに、ごろごろ野菜みたいなドラム。",
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Slowdown.wav"
+  },{
+    "category": "music",
+    "image": "", 
+    "title": "深淵 by うらにわ",
+    "text": "原曲:暗闇の風穴\n暗く激しいのを作ろうとして出来た、手探りインダストリアルミュージック？嫉妬",
+    "badge": "Chill...",
+    "audio": "./2025_eisuichi/uraniwaTouhou/The-Low-End-Ceremony/Shinen.wav"
+  },
+  {
+    "category": "novel",
+    "image": "", 
+    "title": "【SS】クイックターン",
+    "text": "湖が「泳げ」と言っている。作：こは",
+    "badge": "Novel",
+    "link": "https://coolier.net/sosowa/ssw_l/242/1668169343"
+  },
+  {
+    "category": "novel",
+    "image": "", 
+    "title": "【SS】谷に響くは歓喜の祈り",
+    "text": "ぽつり、ぽつりと垂れる黒い液。  　　 作：HOOBIG",
+    "badge": "Novel",
+    "link": "https://coolier.net/sosowa/ssw_l/250/1767449559"
+  }
+]
