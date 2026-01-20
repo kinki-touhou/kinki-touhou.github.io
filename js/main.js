@@ -51,64 +51,71 @@ setInterval(createPetal, 300);
 // ▼▼▼ 4. カウントダウンタイマー（1秒ごとに更新） ▼▼▼
 
 function countDownKouroumu() {
-    // 1. タイマーの要素があるか確認
+    // 1. 要素の取得
     const timerElement = document.getElementById("timer");
-    // 日付を表示しているpタグも取得（更新するため）
-    const dateDisplayElement = document.querySelector(".countdown-container p"); 
+    // ★ここを追加：日付を表示する場所をIDで確実に取得
+    const dateTextElement = document.getElementById("event-date"); 
     
     if (!timerElement) return;
 
-    // 2. JSONデータを読み込みに行く
+    // 2. JSON取得
     fetch('./json/kouroumu-date.json')
         .then(res => {
             if (!res.ok) throw new Error('JSON not found');
             return res.json();
         })
         .then(data => {
-            // 読み込み成功！データ(data)を持ってタイマー始動関数へ
             startTimer(data);
         })
-        .catch(err => console.error('読み込みエラー:', err));
+        .catch(err => {
+            console.error(err);
+            // エラー時はメッセージを出す
+            if(dateTextElement) dateTextElement.innerText = "（日程情報なし）";
+        });
 
 
-    // ▼▼▼ 3. データを受け取ってタイマーを動かす関数 ▼▼▼
+    // 3. 計算ロジック
     function startTimer(dateList) {
         
         function updateTimer() {
             const now = new Date().getTime();
             let targetDate = null;
-            let targetEventName = "";
 
-            // --- A. ループ処理：未来の日付を探す ---
+            // リストから未来の日付を探す
             for (let i = 0; i < dateList.length; i++) {
-                // JSONの日付をミリ秒に変換
                 const eventTime = new Date(dateList[i].date).getTime();
                 
-                // 「現在時刻」より「イベント時刻」の方が未来なら、それが次回の予定！
                 if (eventTime > now) {
                     targetDate = eventTime;
-                    targetEventName = dateList[i].event; // イベント名もとっておく
 
-                    // ついでに画面の日付文字も自動更新する
-                    if (dateDisplayElement) {
+                    // ▼▼▼ ここで日付を更新します！ ▼▼▼
+                    if (dateTextElement) {
+                        // JSONの日付文字列を「日付データ」に変換
                         const d = new Date(dateList[i].date);
-                        const dateString = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
-                        dateDisplayElement.innerText = `（${dateString} 開催予定）`;
+                        
+                        // 年・月・日を取り出す（月は0から始まるので+1する）
+                        const year = d.getFullYear();
+                        const month = d.getMonth() + 1;
+                        const date = d.getDate();
+
+                        // 画面の文字を書き換える
+                        // 例：「（2026年10月11日 開催予定）」
+                        dateTextElement.innerText = `（${year}年${month}月${date}日 開催予定）`;
                     }
-                    
-                    // 見つかったのでループ終了
-                    break;
+                    // ▲▲▲ 更新完了 ▲▲▲
+
+                    break; // 見つかったのでループ終了
                 }
             }
 
-            // --- B. 未来の予定がなかった場合 ---
+            // 予定がない場合
             if (!targetDate) {
                 timerElement.innerText = "次回の日程は調整中です";
-                if(dateDisplayElement) dateDisplayElement.innerText = "（日程未定）";
+                if (dateTextElement) dateTextElement.innerText = "（日程未定）";
                 return;
             }
 
-            // --- C. カウントダウン計算 ---
+            // カウントダウン計算
             const gap = targetDate - now;
             const second = 1000;
             const minute = second * 60;
@@ -125,15 +132,14 @@ function countDownKouroumu() {
                 if(elHours) elHours.innerText = textHour;
             } else {
                 timerElement.innerText = "開催当日！";
+                if(dateTextElement) dateTextElement.innerText = "（本日開催！）";
             }
         }
 
-        // 初回実行 ＆ 1秒ごとの更新開始
         updateTimer();
         setInterval(updateTimer, 1000);
     }
 }
-
 // ▼▼▼ 5. テキスト自動読み込み機能 (fetch) ▼▼▼
 function loadTexts() {
     const targets = document.querySelectorAll('.text-loader');
