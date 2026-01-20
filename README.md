@@ -11,12 +11,40 @@
 
 ```
 root/
-   ├ Beisuichi_header.jpeg
+   ├ favicon.ico
    ├ index.html
-      ├ about.html
-      └output.html
+   ├ about.html
+   ├ output.html
+   ├ google0baff7bf63bccc36.html
    ├ README.md
-   └ style.css
+   ├ 2025_eisuichi
+   |  ├2025_eisuichi_XXX.webp
+   |  └uraniwaTouhou
+   ├ img
+   |  ├ eisuichi_header.jpeg
+   |  ├ icon.jpg
+   |  ├ IMG_2188-2.jpg
+   |  └ japanese-paper.jpg
+   ├ js
+   |  ├ main.js
+   |  └ category.js
+   ├ json
+   |  └ works.json
+   ├ txt
+   |  └ about.txt
+   ├ .DS_Store
+   └ css
+      ├ style.css
+      ├ about.css 
+      ├ cherry_blossom.css
+      ├ countdown.css 
+      ├ font.css
+      ├ footer.css
+      ├ katsudo-fukei.css
+      ├ kouryuu.css
+      ├ loading.css
+      ├ nenkan-yotei.css
+      └ output.css
 ```
 
 ## 命名規則
