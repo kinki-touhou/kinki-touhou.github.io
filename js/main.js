@@ -45,20 +45,17 @@ function createPetal() {
 // 桜を開始
 setInterval(createPetal, 300);
 
-
-
-
 // ▼▼▼ 4. カウントダウンタイマー（1秒ごとに更新） ▼▼▼
 
 function countDownKouroumu() {
-    // 1. タイマーの要素があるか確認
+    // 1. 要素の取得
     const timerElement = document.getElementById("timer");
-    // 日付を表示しているpタグも取得（更新するため）
-    const dateDisplayElement = document.querySelector(".countdown-container p"); 
+    // ★ここを追加：日付を表示する場所をIDで確実に取得
+    const dateTextElement = document.getElementById("event-date"); 
     
     if (!timerElement) return;
 
-    // 2. JSONデータを読み込みに行く
+    // 2. JSON取得
     fetch('./json/kouroumu-date.json')
         .then(res => {
             if (!res.ok) throw new Error('JSON not found');
@@ -110,7 +107,6 @@ function updateTimer(dateList, timerElement, dateDisplayElement) {
         if(dateDisplayElement) dateDisplayElement.innerText = "（日程未定）";
         return;
     }
-
     // --- C. カウントダウン計算 ---
     const gap = targetDate - now;
     const second = 1000;
