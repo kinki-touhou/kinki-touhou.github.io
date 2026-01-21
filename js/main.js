@@ -66,71 +66,68 @@ function countDownKouroumu() {
         })
         .then(data => {
             // 読み込み成功！データ(data)を持ってタイマー始動関数へ
-            startTimer(data);
+            startTimer(data, timerElement, dateDisplayElement);
         })
         .catch(err => console.error('読み込みエラー:', err));
+}
 
+// ▼▼▼ 3. データを受け取ってタイマーを動かす関数 ▼▼▼
+function startTimer(dateList, _timerElement, _dateDisplayElement) {        
+    updateTimer(dateList, _timerElement, _dateDisplayElement)
+    setInterval(() => updateTimer(dateList, _timerElement, _dateDisplayElement), 1000);
+}
 
-    // ▼▼▼ 3. データを受け取ってタイマーを動かす関数 ▼▼▼
-    function startTimer(dateList) {
+function updateTimer(dateList, timerElement, dateDisplayElement) {
+    const now = new Date().getTime();
+    let targetDate = null;
+    let targetEventName = "";
+
+    // --- A. ループ処理：未来の日付を探す ---
+    for (let i = 0; i < dateList.length; i++) {
+        // JSONの日付をミリ秒に変換
+        const eventTime = new Date(dateList[i].date).getTime();
         
-        function updateTimer() {
-            const now = new Date().getTime();
-            let targetDate = null;
-            let targetEventName = "";
+        // 「現在時刻」より「イベント時刻」の方が未来なら、それが次回の予定！
+        if (eventTime > now) {
+            targetDate = eventTime;
+            targetEventName = dateList[i].event; // イベント名もとっておく
 
-            // --- A. ループ処理：未来の日付を探す ---
-            for (let i = 0; i < dateList.length; i++) {
-                // JSONの日付をミリ秒に変換
-                const eventTime = new Date(dateList[i].date).getTime();
-                
-                // 「現在時刻」より「イベント時刻」の方が未来なら、それが次回の予定！
-                if (eventTime > now) {
-                    targetDate = eventTime;
-                    targetEventName = dateList[i].event; // イベント名もとっておく
-
-                    // ついでに画面の日付文字も自動更新する
-                    if (dateDisplayElement) {
-                        const d = new Date(dateList[i].date);
-                        const dateString = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
-                        dateDisplayElement.innerText = `（${dateString} 開催予定）`;
-                    }
-                    
-                    // 見つかったのでループ終了
-                    break;
-                }
+            // ついでに画面の日付文字も自動更新する
+            if (dateDisplayElement) {
+                const d = new Date(dateList[i].date);
+                const dateString = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+                dateDisplayElement.innerText = `（${dateString} 開催予定）`;
             }
-
-            // --- B. 未来の予定がなかった場合 ---
-            if (!targetDate) {
-                timerElement.innerText = "次回の日程は調整中です";
-                if(dateDisplayElement) dateDisplayElement.innerText = "（日程未定）";
-                return;
-            }
-
-            // --- C. カウントダウン計算 ---
-            const gap = targetDate - now;
-            const second = 1000;
-            const minute = second * 60;
-            const hour = minute * 60;
-            const day = hour * 24;
-
-            const textDay = Math.floor(gap / day);
-            const textHour = Math.floor((gap % day) / hour);
-
-            if (gap > 0) {
-                const elDays = document.getElementById("days");
-                const elHours = document.getElementById("hours");
-                if(elDays) elDays.innerText = textDay;
-                if(elHours) elHours.innerText = textHour;
-            } else {
-                timerElement.innerText = "開催当日！";
-            }
+            
+            // 見つかったのでループ終了
+            break;
         }
+    }
 
-        // 初回実行 ＆ 1秒ごとの更新開始
-        updateTimer();
-        setInterval(updateTimer, 1000);
+    // --- B. 未来の予定がなかった場合 ---
+    if (!targetDate) {
+        timerElement.innerText = "次回の日程は調整中です";
+        if(dateDisplayElement) dateDisplayElement.innerText = "（日程未定）";
+        return;
+    }
+
+    // --- C. カウントダウン計算 ---
+    const gap = targetDate - now;
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const textDay = Math.floor(gap / day);
+    const textHour = Math.floor((gap % day) / hour);
+
+    if (gap > 0) {
+        const elDays = document.getElementById("days");
+        const elHours = document.getElementById("hours");
+        if(elDays) elDays.innerText = textDay;
+        if(elHours) elHours.innerText = textHour;
+    } else {
+        timerElement.innerText = "開催当日！";
     }
 }
 
