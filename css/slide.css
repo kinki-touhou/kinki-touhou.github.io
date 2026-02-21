@@ -89,7 +89,7 @@
     }
 
     /* 2. カードをその高さ一杯まで広げる */
-    .swiper-slide .card {
+    .swiper-slide .slide-card {
         height: 100%;
         width: 100%;
         display: flex;
@@ -98,14 +98,14 @@
     }
 
     /* 3. 画像の高さ制限（前回と同じ） */
-    .swiper-slide .card-image img {
+    .swiper-slide .slide-card-image img {
         height: 200px !important; /* 画像エリアの高さ */
         width: 100%;
         object-fit: cover;
     }
 
     /* 4. テキストエリアの調整 */
-    .swiper-slide .card-text {
+    .swiper-slide .slide-card-text {
         flex: 1;           /* 残りのスペースを使う */
         overflow: hidden;  /* 万が一文字が多すぎても枠からはみ出させない */
     }
